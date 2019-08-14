@@ -1,0 +1,38 @@
+{
+  "name": "TestRideWeeklySlot",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "hidden": ["id"],
+  "options": {
+  },
+  "properties": {
+    "days" : {
+      "type" : "string"
+    },
+    "day_name" : {
+      "type" : "string"
+    },
+    "test_ride_vehicle" : {
+      "type" : "number"
+    },
+    "total_slots" : {
+      "type" : "string"
+    },
+    "is_holiday" : {
+      "type" : "boolean"
+    },
+    "total_booked" : {
+      "type" : "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

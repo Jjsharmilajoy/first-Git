@@ -1,0 +1,101 @@
+{
+  "sheetName": "vehicle-price",
+  "model": "VehiclePrice",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["manufacturer_id", "vehicle_id", "variant_id", "dealer_id"],
+  "columns": {
+    "Vehicle Name": {
+      "property": "vehicle_id"
+    },
+    "Variant Name": {
+      "property": "variant_id"
+    },
+    "Variant Colour Name": {
+      "property": "variant_colours_id"
+    },
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Dealer Name": {
+      "property": "dealer_id"
+    },
+    "ex showroom price": {
+      "model": "VehiclePrice",
+      "property": "ex_showroom_price"
+    },
+    "rto charges": {
+      "model": "VehiclePrice",
+      "property": "rto_charges"
+    },
+    "road safety tax": {
+      "model": "VehiclePrice",
+      "property": "road_safety_tax"
+    },
+    "life tax": {
+      "model": "VehiclePrice",
+      "property": "life_tax"
+    },
+    "handling charges": {
+      "model": "VehiclePrice",
+      "property": "handling_charges"
+    },
+    "miscellaneous charges": {
+      "model": "VehiclePrice",
+      "property": "miscellaneous_charges"
+    },
+    "onroad price": {
+      "model": "VehiclePrice",
+      "property": "onroad_price"
+    },
+    "accessories": {
+      "model": "VehiclePrice",
+      "property": "accessories_price"
+    },
+    "Extented Warranty": {
+      "model": "VehiclePrice",
+      "property": "extented_warranty"
+    }
+  },
+  "relations": {
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "variant_id": {
+      "model": "Variant",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "variant_id"
+        },
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    }
+  }
+}

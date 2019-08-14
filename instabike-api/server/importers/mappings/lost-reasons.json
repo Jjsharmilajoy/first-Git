@@ -1,0 +1,21 @@
+{
+  "sheetName": "lost-reasons",
+  "model": "LostReason",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["reason"],
+  "columns": {
+    "Category": {
+      "model": "LostReason",
+      "property": "category"
+    },
+    "Name": {
+      "model": "LostReason",
+      "property": "reason"
+    },
+    "Priority": {
+      "model": "LostReason",
+      "property": "priority"
+    }
+  },
+  "relations": {}
+}

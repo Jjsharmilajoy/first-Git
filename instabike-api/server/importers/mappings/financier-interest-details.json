@@ -1,0 +1,82 @@
+{
+  "sheetName": "financier-interest-details",
+  "model": "FinancierInterestDetail",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["financier_id", "dealer_id", "vehicle_id", "variant_id", "tenure", "advance_emi"],
+  "columns": {
+    "Financier": {
+      "property": "financier_id"
+    },
+    "Vehicle": {
+      "property": "vehicle_id"
+    },
+    "Variant": {
+      "property": "variant_id"
+    },
+    "Dealer Name": {
+      "property": "dealer_id"
+    },
+    "Down Payment": {
+      "model": "FinancierInterestDetail",
+      "property": "down_payment"
+    },
+    "Tenure": {
+      "model": "FinancierInterestDetail",
+      "property": "tenure"
+    },
+    "Advance EMI": {
+      "model": "FinancierInterestDetail",
+      "property": "advance_emi"
+    },
+    "ROI": {
+      "model": "FinancierInterestDetail",
+      "property": "rate_of_interest"
+    },
+    "EMI": {
+      "model": "FinancierInterestDetail",
+      "property": "emi"
+    }
+  },
+  "relations": {
+    "financier_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "financier_id"
+        }
+      ]
+    },
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "variant_id": {
+      "model": "Variant",
+      "queryDependencies": [
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        },
+        {
+          "queryProperty": "name",
+          "objectProperty": "variant_id"
+        }
+      ]
+    }
+  }
+}

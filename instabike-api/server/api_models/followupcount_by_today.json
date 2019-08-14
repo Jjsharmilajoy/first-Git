@@ -1,0 +1,17 @@
+{
+  "name": "FollowupCountByToday",
+  "base": "PersistedModel",
+  "properties": {
+    "followup": {
+      "type" : "number"
+    },
+    "followupDone": {
+      "type" : "number"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

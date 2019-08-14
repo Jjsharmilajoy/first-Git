@@ -1,0 +1,58 @@
+{
+  "name": "Roles",
+  "base": "Role",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "roles"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "module": {
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user_role": {
+      "type": "hasMany",
+      "model": "UserRole",
+      "foreignKey": "role_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

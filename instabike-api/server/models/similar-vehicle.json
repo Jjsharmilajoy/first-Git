@@ -1,0 +1,41 @@
+{
+  "name": "SimilarVehicle",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "similar_vehicles"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle" : {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id"
+    },
+    "similar-vehicle" : {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "similar_vehicle_id"
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

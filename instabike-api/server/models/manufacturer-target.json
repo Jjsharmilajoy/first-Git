@@ -1,0 +1,145 @@
+{
+  "name": "ManufacturerTarget",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "manufacturer_targets"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "target_name" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "target_from_date" : {
+      "type" : "date",
+      "required" : true,
+      "postgresql": {
+       "dataType": "date"
+     }
+    },
+    "target_to_date" : {
+      "type" : "date",
+      "required" : true,
+      "postgresql": {
+       "dataType": "date"
+     }
+    },
+    "is_special_target": {
+      "type": "boolean",
+      "default": false
+    },
+    "vehicle_type": {
+      "type" : "number"
+    },
+    "financial_year": {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "month_target_count": {
+      "type" : "number"
+    },
+    "special_target_count": {
+      "type" : "number"
+    },
+    "total_count": {
+      "type" : "number"
+    },
+    "target": {
+      "type" : "number",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "country": {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": "country_id"
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "DealerCategory",
+      "foreignKey": "dealer_category_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

@@ -1,0 +1,140 @@
+{
+  "name": "FinancierTeam",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "financier_teams"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid",
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "created_by": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "name": {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "owned_by": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "from_date": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "to_date": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "owner": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "owned_by"
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id"
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id"
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    },
+    "financierTeamMembers" : {
+      "type": "hasMany",
+      "model": "FinancierTeamMember",
+      "foreignKey": "financier_team_id"
+    },
+    "financierTarget" : {
+      "type": "hasOne",
+      "model": "FinancierTarget",
+      "foreignKey": "financier_team_id"
+    },
+    "financierDealers": {
+      "type": "hasMany",
+      "model": "FinancierDealer",
+      "foreignKey": "financier_team_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["findById"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_CITY_HEAD",
+      "permission": "ALLOW",
+      "property" : ["getTeamMembersByTeamId", "getTeamDetail", "getDealersUnassignedToSales", "getDealershipLeadEffectiveness",
+        "changeDealershipUser", "getLeadSummaryBasedOnDealership", "getDealershipMemberSummary", "deleteTeamMember",
+        "getDealershipMonthlyReport"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property" : ["getTeamMembersByTeamId", "getTeamDetail", "getDealersUnassignedToSales", "getDealershipLeadEffectiveness",
+        "changeDealershipUser", "getDealershipMemberSummary", "deleteTeamMember", "getDealershipMonthlyReport"]
+    }
+  ],
+  "indexes": {
+    "team_name_constraint": {
+      "keys": {"name": 1, "financier_id": -1},
+      "options": {"unique": true}
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

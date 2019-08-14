@@ -1,0 +1,74 @@
+{
+  "name": "DealerMetric",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_metrics"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "booking_count" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "invoice_count" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "delivered_count" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "delivered_value" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "metrics_as_on" : {
+      "type" : "date",
+      "required" : true,
+      "defaultFn" : "now"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

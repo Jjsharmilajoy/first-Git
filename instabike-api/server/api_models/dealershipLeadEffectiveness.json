@@ -1,0 +1,22 @@
+{
+  "name": "DealershipLeadEffectiveness",
+  "properties": {
+    "fromDate" : {
+      "type": "string"
+    },
+    "toDate" : {
+      "type": "string"
+    },
+    "dealerIds" : {
+      "type": ["string"]
+    },
+    "financierTeamIds" : {
+      "type": ["string"]
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

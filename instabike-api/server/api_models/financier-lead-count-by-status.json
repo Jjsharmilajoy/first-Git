@@ -1,0 +1,23 @@
+{
+  "name": "FinancierLeadCountByStatus",
+  "hidden": ["id"],
+  "properties": {
+    "ongoing" : {
+      "type": "number"
+    },
+    "scheduled" : {
+      "type": "number"
+    },
+    "completed" : {
+      "type": "number"
+    },
+    "cancelled" : {
+      "type": "number"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

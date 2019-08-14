@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proforma Invoice</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+body {
+  margin: 0 auto;
+  font-size: 13px;
+}
+thead {
+  display: table-row-group;
+}
+tfoot {
+  display: table-row-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+.content {
+  padding: 5px;
+}
+.lead-content {
+  padding: 5px 0px 5px 30px;
+}
+.address-line-one {
+  padding: 5px 5px 0px 5px;
+}
+.address-line-two {
+  padding-left: 5px;
+}
+.logo {
+  padding: 0px 20px 20px 10px;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.capital {
+  text-transform: capitalize;
+}
+.checked {
+  background-image: url(https://instabikedevdisks.blob.core.windows.net/instabike/assets/checkbox-checked.png);
+  background-position: center;
+  background-size: auto 60%;
+  width: 25px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+.unchecked {
+  background-image: url(https://instabikedevdisks.blob.core.windows.net/instabike/assets/checkbox-unchecked.png);
+  background-position: center;
+  background-size: auto 60%;
+  width: 25px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.row {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+.table-primary {
+    background-color: #b8daff;
+}
+.logoContainer {
+  width: 20%;
+  margin: 0px 5px;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: #f9f9f9
+}
+@page { size: A4; margin: 0; }
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    font-size: 10px;
+    font-weight: lighter;
+  }
+}
+</style>
+<body style="background-color: 'red'" >
+  <page size="A4">
+    <!-- Header -->
+    <!-- Header Title -->
+    <div style="margin: 2px 0px; text-align: center; font-size: 16px">
+      <strong class = "center">Proforma Invoice</strong>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <!-- Dealership Details -->
+        <div class="row">
+          <div style="width:20%;">
+            <div class="content">
+              <span>Date: </span>
+              <span>{{=it.date}}</span>
+            </div>
+            <div class="logoContainer">
+              <img src="{{=it.manufacturer.logo_url}}" width="140">
+            </div>
+          </div>
+          <div style="width: 32%;">
+            <div class="content">
+              <span>Dealership Name:</span>
+              <strong>{{=it.dealer.name}}</strong>
+            </div>
+            <div class="address-line-one">
+              <span>Address:</span>
+              <strong>{{=it.dealer.address_line_1}} {{=it.dealer.address_line_2}}</strong>
+            </div>
+            <div class="address-line-two">
+              <strong>{{=it.dealer.city.name}}, {{=it.dealer.state.name}} - {{=it.dealer.pincode}}</strong>
+            </div>
+            <div class="content">
+              <span>Phone No:</span>
+              <strong>{{=it.dealer.mobile_no}}</strong>
+            </div>
+            <div class="content">
+              <span>Email:</span>
+              <strong>{{=it.dealer.email}}</strong>
+            </div>
+          </div>
+          <div style="width: 32%;">
+            <div class="content">
+              <span>GSTIN:</span>
+              {{? it.dealer.gst_number !== null}}
+              <strong>{{=it.dealer.gst_number}}</strong>
+              {{?}}
+            </div>
+            <div class="content">
+              <span>Cheque in favour of:</span>
+              {{? it.dealer.cheque_in_favour_of !== null}}
+              <strong>{{=it.dealer.cheque_in_favour_of}}</strong>
+              {{?}}
+            </div>
+            <div class="content">
+              <span>Account No:</span>
+              {{? it.dealer.account_details !== null}}
+              <strong>{{=it.dealer.account_details}}</strong>
+              {{?}}
+            </div>
+          </div>
+        </div>
+        <!-- /Dealership Details -->
+      </div>
+    </div>
+    <!-- /Header -->
+    <!-- Price Details -->
+    <div class="card">
+      <div class="card-body">
+        <!-- Lead Information -->
+        <div class="row">
+          <div style="width:32%; margin-top:20px;">
+            <div class="lead-content">
+              <span>Customer Name:</span>
+              <strong>Ms/Mr. {{=it.lead.name}}</strong>
+            </div>
+            <div class="lead-content">
+              <span>Contact Details:</span>
+              <strong>{{=it.lead.mobile_number}}</strong>
+            </div>
+          </div>
+          <div style="width:32%; margin-top:20px;">
+            <div class="lead-content">
+              <span>Vehicle Enquired:</span>
+              <strong>{{=it.vehicle.name}}</strong>
+            </div>
+            <div class="lead-content">
+              <span>Variant & Colour:</span>
+              <strong>{{=it.variant.name}} & {{=it.color.color}}</strong>
+            </div>
+          </div>
+          <div style="width:36%; text-align: center;">
+            <div>
+              <img src="{{=it.color.image_url}}" width="150">
+            </div>
+          </div>
+        </div>
+        <!-- /Lead Information -->
+        <div class="row">
+          <!-- Accessories -->
+          <div style="width: 46%; margin-top: 30px; margin-left: 25px;">
+            <div>
+              <strong>Accessories</strong>
+            </div>
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered">
+                <thead class="table-primary">
+                  <tr>
+                    <th class="center">S.No</th>
+                    <th class="center">List</th>
+                    <th class="center">Amount (₹)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{~it.accessories :value:index}}
+                  <tr>
+                    {{? value.name === 'Total'}}
+                      <td class="center"></td>
+                    {{??}}
+                      <td class="center">{{=index + 1}}</td>
+                    {{?}}
+                    <td class="left">{{=value.name}}</td>
+                    <td class="right">{{=value.price}}.00</td>
+                  </tr>
+                  {{~}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /Accessories -->
+          <div style="width: 46%; margin-top: 30px; margin-left: 30px;">
+            <div>
+              <strong>Price Breakdown</strong>
+            </div>
+            <!-- Price Breakdown -->
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered">
+                <thead class="table-primary">
+                  <tr>
+                    <th class="center">Particulars</th>
+                    <th class="center">Amount (₹)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{~it.price :value:index}}
+                    <tr>
+                      <td class="left" style="width:75%">{{=value.name}}</td>
+                      <td class="right" style="width:25%">{{=value.price}}.00</td>
+                    </tr>
+                  {{~}}
+
+                  <!--tr>
+                    <td>
+                      <table style="width:100%; padding-left: 25px;">
+                        <tbody>
+                          <tr>
+                            <td class="left"> - TP Premium (5 years)</td>
+                            <td class="right">{{=it.insurances.tp_premium_5}}.00</td>
+                          </tr>
+                          <tr>
+                            <td class="left"> - Compulsory PA Cover (15 years)</td>
+                            <td class="right">{{=it.insurances.compulsory_pa_cover_1}}.00</td>
+                          </tr>
+                          {{? it.leadDetail.od_premium_validity === 1}}
+                            <tr>
+                              <td class="left"> - OD Premium (1 year)</td>
+                              <td class="right">{{=it.insurances.od_premium_1}}.00</td>
+                            </tr>
+                          {{?}}
+                          {{? it.leadDetail.od_premium_validity === 5}}
+                            <tr>
+                              <td class="left"> - OD Premium (5 years)</td>
+                              <td class="right">{{=it.insurances.od_premium_5}}.00</td>
+                            </tr>
+                          {{?}}
+                          {{? it.leadDetail.zero_depreciation === true}}
+                            <tr>
+                              <td class="left"> - Zero Depreciation</td>
+                              <td class="right">{{=it.insurances.zero_depreciation}}.00</td>
+                            </tr>
+                          {{?}}
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr-->
+                  <tr>
+                    <td class="left table-primary" style="width:75%">On-road Price</td>
+                    <td class="right table-primary" style="width:25%">{{=it.onRoadPrice}}.00</td>
+                  </tr>
+                  {{~it.otherCharges :value:index}}
+                    <tr>
+                      <td class="left" style="width:75%">{{=value.name}}</td>
+                      <td class="right" style="width:25%">{{=value.price}}.00</td>
+                    </tr>
+                  {{~}}
+                  {{? it.exchangeVehicle}}
+                    <tr>
+                      <td class="left" style="width:75%">Exchange Value(-)</td>
+                      <td class="right" style="width:25%">{{=it.exchangeVehicle.quoted_value}}.00</td>
+                    </tr>
+                  {{?}}
+                  <tr>
+                    <td class="left table-primary" style="width:75%">Grand Total</td>
+                    <td class="right table-primary" style="width:25%">{{=it.grandTotal}}.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /Price Breakdown -->
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Registration Documents -->
+          <div style="width: 30%; margin-top: 30px; margin-left: 25px;">
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered">
+                <thead class="table-primary">
+                  <tr>
+                    <th class="center">Documents Required for Registration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{~it.registrationDocuments :value:index}}
+                  <tr>
+                    <td class="left">{{=value}}</td>
+                  </tr>
+                  {{~}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /Registration Documents -->
+
+          <!-- Exchange Vehicle -->
+          {{? it.exchangeVehicle}}
+          <div style="width: 30%; margin-top: 30px; margin-left: 25px;">
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered">
+                <thead class="table-primary">
+                  <tr>
+                    <th class="center" colspan="2">Exchange Bike Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="left">Make</td>
+                    {{? it.exchangeVehicle.manufacturer != null}}
+                      <td class="center">{{=it.exchangeVehicle.manufacturer}}</td>
+                    {{?}}
+                  </tr>
+                  <tr>
+                    <td class="left">Model</td>
+                    {{? it.exchangeVehicle.vehicle != null}}
+                      <td class="center">{{=it.exchangeVehicle.vehicle}}</td>
+                    {{?}}
+                  </tr>
+                  <tr>
+                    <td class="left">Year of Manufacture</td>
+                    {{? it.exchangeVehicle.variant_year != null}}
+                      <td class="center">{{=it.exchangeVehicle.variant_year}}</td>
+                    {{?}}
+                  </tr>
+                  <tr>
+                    <td class="left">Kms driven</td>
+                    {{? it.exchangeVehicle.kilometers_used != null}}
+                      <td class="center">{{=it.exchangeVehicle.kilometers_used}}</td>
+                    {{?}}
+                  </tr>
+                  <tr>
+                    <td class="left">Vehicle Condition</td>
+                    {{? it.exchangeVehicle.condition != null}}
+                      <td class="center">{{=it.exchangeVehicle.condition}}</td>
+                    {{?}}
+                  </tr>
+                  <tr>
+                    <td class="left">Remarks</td>
+                    {{? it.exchangeVehicle.remarks != null}}
+                      <td class="center">{{=it.exchangeVehicle.remarks}}</td>
+                    {{?}}
+                  </tr>
+                  <tr>
+                    <td class="left">Exchange value</td>
+                    {{? it.exchangeVehicle.quoted_value != null}}
+                      <td class="center">{{=it.exchangeVehicle.quoted_value}}.00</td>
+                    {{?}}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {{?}}
+          <!-- /Exchange Vehicle -->
+
+          <!-- Financier -->
+          {{? it.financier}}
+          <div style="width: 30%; margin-top: 30px; margin-left: 25px;">
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered">
+                <thead class="table-primary">
+                  <tr>
+                    <th class="center" colspan="2">{{=it.financier.financier.name}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="left">Down payment</td>
+                    <td class="center">{{=it.financier.down_payment}}.00</td>
+                  </tr>
+                  <!-- <tr>
+                    <td class="left">Rate of Interest</td>
+                    {{? it.financier.interest_percentage}}
+                      <td class="center">{{=it.financier.interest_percentage}}%</td>
+                    {{??}}
+                      <td class="center"> </td>
+                    {{?}}
+                  </tr> -->
+                  <tr>
+                    <td class="left">Tenure</td>
+                    <td class="center">{{=it.financier.tenure}} Months</td>
+                  </tr>
+                  <tr>
+                    <td class="left">EMI/month</td>
+                    <td class="center">{{=it.financier.emi}}.00</td>
+                  </tr>
+                  <tr>
+                    <td class="left">Advance EMI</td>
+                    <td class="center">{{=it.financier.advance_emi}}</td>
+                  </tr>
+                  <tr>
+                    <td class="left" colspan="2">*The finance offer given above is indicative and subject to change</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {{?}}
+          <!-- /Exchange Vehicle -->
+
+        </div>
+
+        <!-- Financial Documents -->
+        <div class="row">
+          <div style="width: 60%; margin-top: 10px; margin-left: 25px;">
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered" style="margin-bottom: 0em;">
+                <thead class="table-primary padding: 10px">
+                  <tr>
+                    <th class="center" colspan="3">Documents Required for Finance</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div style="width: 30%; margin-left: 25px;margin-top: 0px;">
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered">
+                <tbody>
+                  {{~it.financialDocumentsFirst :value:index}}
+                  <tr>
+                    <td class="canter">{{=index + 1}}</td>
+                    <td class="left">{{=value.name}}</td>
+                    {{? value.is_checked}}
+                      <td class="canter checked"></td>
+                    {{??}}
+                      <td class="canter unchecked"></td>
+                    {{?}}
+                  </tr>
+                  {{~}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div style="width: 30%;margin-top: 0px;">
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-sm table-bordered">
+                <tbody>
+                  {{~it.financialDocumentsSecond :value:index}}
+                  <tr>
+                    <td class="canter">{{=index + 11}}</td>
+                    <td class="left">{{=value.name}}</td>
+                    {{? value.is_checked}}
+                      <td class="canter checked"></td>
+                    {{??}}
+                      <td class="canter unchecked"></td>
+                    {{?}}
+                  </tr>
+                  {{~}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div style="width: 30%; margin-top: 5%;margin-left: 20px;">
+            <div class="content">
+              <span>Dealer Executive's Signature:____________</span>
+            </div>
+            <div class="content" style="margin-top: 20px;">
+              <span>Sales Executive Name:</span>
+              <strong>{{=it.salesExecitive.first_name}}</strong>
+            </div>
+            <div class="content">
+              <span>Contact Number:</span>
+              <strong>{{=it.salesExecitive.official_contact_number}}</strong>
+            </div>
+          </div>
+
+        </div>
+        <!-- /Financial Documents -->
+
+        </div>
+      </div>
+      <!-- Price Details -->
+
+      <!-- Terms & Conditions -->
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+
+            <div style="width: 60%; margin-left: 25px;">
+              <div class="table-responsive-sm">
+                <table class="table table-striped table-sm table-bordered">
+                  <thead class="table-primary">
+                    <tr>
+                      <th class="center">Terms & Conditions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{~it.dealer.terms_and_conditions :value:index}}
+                    <tr>
+                      <td class="left">{{=value}}</td>
+                    </tr>
+                    {{~}}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div style="width: 30%; margin-left: 25px;">
+              <div class="table-responsive-sm">
+                <table class="table table-striped table-sm table-bordered">
+                  <thead class="table-primary">
+                    <tr>
+                      <th class="center">Working Days</th>
+                      <th class="center">Working Hours</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="left">Monday to Friday</td>
+                      <td class="left">{{=it.dealer.working_monday_friday_start}} - {{=it.dealer.working_monday_friday_end}} hrs</td>
+                    </tr>
+                    <tr>
+                      <td class="left">Saturday</td>
+                      <!-- if saturday working -->
+                      {{? it.dealer.working_saturday_start &&  it.dealer.working_saturday_end}}
+                      <td class="left">{{=it.dealer.working_saturday_start}} - {{=it.dealer.working_saturday_end}} hrs</td>
+                      {{??}}
+                      <td class="left"> - </td>
+                      {{?}}
+                    </tr>
+                    <tr>
+                      <td class="left">Sunday</td>
+                      <!-- if sunday working -->
+                      {{? it.dealer.working_sunday_start &&  it.dealer.working_sunday_end}}
+                      <td class="left">{{=it.dealer.working_sunday_start}} - {{=it.dealer.working_sunday_end}} hrs</td>
+                      {{??}}
+                      <td class="left"> - </td>
+                      {{?}}
+                    </tr>
+                    <tr>
+                      <td class="left">Holiday</td>
+                      <td class="left">{{=it.dealer.weekly_holiday}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- /Terms & Conditions -->
+    </div>
+  </page>
+</body>
+</html>

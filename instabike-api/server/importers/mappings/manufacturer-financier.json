@@ -1,0 +1,46 @@
+{
+  "sheetName": "manufacturer-financiers",
+  "model": "ManufacturerFinancier",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["manufacturer_id", "financier_id"],
+  "columns": {
+    "Manufacturer": {
+      "property": "manufacturer_id"
+    },
+    "Financier": {
+      "property": "financier_id"
+    },
+    "Country": {
+      "property": "country_id"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    },
+    "financier_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "financier_id"
+        }
+      ]
+    }
+  }
+}

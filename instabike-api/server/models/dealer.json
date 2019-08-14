@@ -1,0 +1,320 @@
+{
+  "name": "Dealer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealers"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "dealer_code" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "address_line_1" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "address_line_2" : {
+      "type" : "string",
+      "required" : false,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "pincode" : {
+      "type" : "number"
+    },
+    "location" : {
+      "type":"GeoPoint"
+    },
+    "landline_no" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "mobile_no" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "gst_number" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "pan_number" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "dealership_started_at" : {
+      "type" : "date",
+      "required" : false
+    },
+    "is_active" : {
+      "type" : "boolean",
+      "default" : true
+    },
+    "external_id" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "monday_friday_start": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "monday_friday_end": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "saturday_start": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "saturday_end": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "sunday_start": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "sunday_end": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "working_monday_friday_start": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "working_monday_friday_end": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "working_saturday_start": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "working_saturday_end": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "working_sunday_start": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "working_sunday_end": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "weekly_holiday": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "email": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "terms_and_conditions": {
+      "type" : ["string"]
+    },
+    "cheque_in_favour_of": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "account_details": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "state" : {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "zone" : {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "region" : {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": "region_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer" : {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer_category" : {
+      "type": "belongsTo",
+      "model": "DealerCategory",
+      "foreignKey": "dealer_category_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealerAccessories": {
+      "type": "hasMany",
+      "model": "DealerAccessory",
+      "foreignKey": "dealer_id"
+    },
+    "city" : {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    },
+    "country" : {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": "country_id"
+    },
+    "vehiclePrice": {
+      "type": "hasMany",
+      "model": "VehiclePrice",
+      "foreignKey": "vehicle_price_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property" : ["dealerLogin", "getTargetByDate"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": ["testRideVehicles", "patchAttributes", "getDetails", "getVehiclesKeyValue",
+        "getUsersKeyValue", "getTargetSummary", "getLeadsSummary", "getRoles"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["associateVehicle", "directReportingMembers", "findById", "allSalesTeamMember",
+        "patchOrCreate", "updateDealerFinancier", "getDealerFinancier", "inventoryDetails","sendCredentials",
+        "resendCredentials", "vehicleDetail", "allVehicles", "createSalesMemberHead", "createSalesMember",
+        "allSalesMember","deleteSalesMember","updateDealerWithManager", "variantInventoryDetail", "createLead",
+        "getVehiclesKeyValue", "salesTeamMembers", "getVehiclesSummary", "getTeamPerformance",
+        "updateSalesMember", "updateSalesMemberHead", "getFinancierInterestDetails", "addExchangeVehicle",
+        "updateExchangeVehicle", "getExchangeVehicle", "getExecutivesAssociated", "makePrint","sendBrocher",
+        "sendProformaInvoiceSMS", "sendLeadReport", "updatePassword", "getVehicleProperties"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property": ["updateCustomer", "createLead", "associateAccessories", "showAllAccessories",
+        "directReportingMembers", "updateDealerFinancier", "getDealerFinancier", "allVehicles",
+        "vehicleDetail", "variantInventoryDetail", "getVehiclesKeyValue", "salesTeamMembers",
+        "getTeamPerformance", "updateSalesMember", "updateSalesMemberHead", "getFinancierInterestDetails",
+        "addExchangeVehicle", "updateExchangeVehicle", "getExchangeVehicle", "getExecutivesAssociated",
+        "makePrint","sendBrocher", "sendProformaInvoiceSMS", "getVehicleProperties"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_SALES",
+      "permission": "ALLOW",
+      "property": ["updateCustomer", "createLead", "associateAccessories", "showAllAccessories",
+        "directReportingMembers", "vehicleDetail", "getVehiclesKeyValue", "getTeamPerformance",
+        "getFinancierInterestDetails", "addExchangeVehicle", "updateExchangeVehicle", "getExchangeVehicle",
+        "getExecutivesAssociated", "makePrint","sendBrocher", "sendProformaInvoiceSMS", "getVehicleProperties"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["prototype.patchAttributes", "getDetails"]
+    }
+  },
+  "methods": []
+}

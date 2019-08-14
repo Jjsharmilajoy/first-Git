@@ -1,0 +1,56 @@
+{
+  "name": "InterProductComparisonDetail",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "inter_product_comparison_detail"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "feature_name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "description" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "why_this_best" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

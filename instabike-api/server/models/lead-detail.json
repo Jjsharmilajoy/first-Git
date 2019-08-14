@@ -1,0 +1,172 @@
+{
+  "name": "LeadDetail",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "lead_details"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "test_ride_on": {
+      "type": "date",
+      "required": false
+    },
+    "booked_on": {
+      "type": "date"
+    },
+    "test_ride_status" : {
+      "type": "number"
+    },
+    "vehicle_status" : {
+      "type": "number",
+      "required": true,
+      "default": 200
+    },
+    "invoiced_on": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default" : false
+    },
+    "od_premium_validity": {
+      "type": "number",
+      "default": 0
+    },
+    "tp_premium": {
+      "type": "number",
+      "default": 0
+    },
+    "compulsory_pa_cover": {
+      "type": "number",
+      "default": 0
+    },
+    "total_insurance_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "zero_depreciation" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "extended_warranty" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "booking_id": {
+      "type" : "string",
+      "postgresql": {
+         "dataType": "character varying"
+       }
+    },
+    "testride_feedback": {
+      "type" : "number"
+      }
+   
+  },
+  "validations": [],
+  "relations": {
+    "manufacturer" : {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer" : {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "lead" : {
+      "type": "belongsTo",
+      "model": "Lead",
+      "foreignKey": "lead_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicle" : {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant" : {
+      "type": "belongsTo",
+      "model": "Variant",
+      "foreignKey": "variant_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant_colour" : {
+      "type": "belongsTo",
+      "model": "VariantColour",
+      "foreignKey": "variant_colour_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "proforma_invoice" : {
+      "type": "belongsTo",
+      "model": "ProformaInvoice",
+      "foreignKey": "proforma_invoice_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "financier_lead" : {
+      "type": "hasMany",
+      "model": "FinancierLead",
+      "foreignKey": "lead_detail_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": ["updateLeadDetail", "deleteById", "currentWeekSlots", "slotsByDate", "fetchTestRideByStatus",
+        "testRideCount", "bookTestRide", "deleteLeadDetail"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

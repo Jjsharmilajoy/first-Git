@@ -1,0 +1,38 @@
+{
+  "sheetName": "zones",
+  "model": "Zone",
+  "Statergy": "findorcreate",
+  "QueryParams": ["manufacturer_id", "name"],
+  "columns": {
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Name": {
+      "model": "Zone",
+      "property": "name"
+    },
+    "Country Name": {
+      "property": "country_id"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

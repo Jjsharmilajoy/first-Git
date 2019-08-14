@@ -1,0 +1,33 @@
+{
+  "sheetName": "exchange-vehicles",
+  "model": "ExchangeVehicleLookup",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["manufacturer", "vehicle", "model", "km_used_from", "km_used_to"],
+  "columns": {
+    "Manufacturer": {
+      "model": "ExchangeVehicleLookup",
+      "property": "manufacturer"
+    },
+    "Vehicle": {
+      "model": "ExchangeVehicleLookup",
+      "property": "vehicle"
+    },
+    "Model": {
+      "model": "ExchangeVehicleLookup",
+      "property": "model"
+    },
+    "Amount": {
+      "model": "ExchangeVehicleLookup",
+      "property": "amount"
+    },
+    "From": {
+      "model": "ExchangeVehicleLookup",
+      "property": "km_used_from"
+    },
+    "To": {
+      "model": "ExchangeVehicleLookup",
+      "property": "km_used_to"
+    }
+  },
+  "relations": {}
+}

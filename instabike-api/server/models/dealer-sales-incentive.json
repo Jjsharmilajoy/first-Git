@@ -1,0 +1,79 @@
+{
+  "name": "DealerSalesIncentive",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_sales_incentives"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "from" : {
+      "type" : "date"
+    },
+    "to" : {
+      "type" : "date"
+    },
+    "percentage" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer_sales_user": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "dealer_sales_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer_manager_user": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "dealer_manager_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

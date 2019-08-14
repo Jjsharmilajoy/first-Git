@@ -1,0 +1,89 @@
+{
+  "name": "RequestAudit",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "request_audit"
+     }
+   },
+  "forceId": true,
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "client_ip": {
+      "type": "string"
+    },
+    "request_path": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "is_mobile": {
+      "type": "string"
+    },
+    "client_browser": {
+      "type": "string"
+    },
+    "request_params": {
+      "type": "string"
+    },
+    "browser_version": {
+      "type": "string"
+    },
+    "client_OS": {
+      "type": "string"
+    },
+    "client_platform": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "client_source": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "error": {
+      "type": "string"
+    },
+    "status_code": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

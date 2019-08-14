@@ -1,0 +1,86 @@
+{
+  "sheetName": "financier-branches",
+  "model": "FinancierBranch",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["address", "contact", "financier_id", "city_id"],
+  "columns": {
+    "Financier Slug": {
+      "property": "financier_id"
+    },
+    "City Head Email": {
+      "property": "financier_city_head_id"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "Name": {
+      "model": "FinancierBranch",
+      "property": "name"
+    },
+    "Address": {
+      "model": "FinancierBranch",
+      "property": "address"
+    },
+    "Contact": {
+      "model": "FinancierBranch",
+      "property": "contact"
+    },
+    "Home Branch": {
+      "model": "FinancierBranch",
+      "property": "is_home_branch"
+    }
+  },
+  "relations": {
+    "financier_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "financier_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        }
+      ]
+    },
+    "financier_city_head_id": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "email",
+          "objectProperty": "financier_city_head_id"
+        }
+      ]
+    }
+  }
+}

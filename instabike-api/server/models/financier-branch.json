@@ -1,0 +1,89 @@
+{
+  "name": "FinancierBranch",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "financier_branches"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid",
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "name": {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "address": {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "contact": {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "is_home_branch": {
+      "type" : "boolean",
+      "default" : false
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "financierCityHead": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "financier_city_head_id"
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id"
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id"
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    }
+  },
+  "acls": [
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

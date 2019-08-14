@@ -1,0 +1,124 @@
+{
+  "name": "Document",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "documents"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "url" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "file_name" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "item_type_id": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "item_type_name": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "is_osv_verified": {
+      "type" : "boolean",
+      "default" : false
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer_user" : {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "customer_user_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_CITY_HEAD",
+      "permission": "ALLOW",
+      "property" : ["upload", "removeDocs", "download", "patchAttributes", "markAsVerified","getExchangeVehiclesImages"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property" : ["upload", "removeDocs", "download", "patchAttributes", "markAsVerified","getExchangeVehiclesImages"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_SALES",
+      "permission": "ALLOW",
+      "property" : ["upload", "removeDocs", "download", "patchAttributes", "markAsVerified","getExchangeVehiclesImages"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["upload","OcrUpload", "removeDocs", 
+        "download", "patchAttributes", "markAsVerified","getExchangeVehiclesImages"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property": ["upload","OcrUpload", "removeDocs", 
+        "download", "patchAttributes", "markAsVerified","getExchangeVehiclesImages"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_SALES",
+      "permission": "ALLOW",
+      "property": ["upload","OcrUpload", "removeDocs", "download", "patchAttributes", "markAsVerified","getExchangeVehiclesImages"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

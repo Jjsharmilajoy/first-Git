@@ -1,0 +1,24 @@
+{
+  "name": "VariantDetail",
+  "base": "PersistedModel",
+  "createOnlyInstance": true,
+  "properties": {
+    "dealer_id" : {
+      "type" : "string"
+    },
+    "vehicle_id": {
+      "type": "string"
+    },
+    "variant_id": {
+      "type": "string"
+    },
+    "variant_colour_id": {
+      "type": "string"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

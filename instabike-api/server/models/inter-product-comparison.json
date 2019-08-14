@@ -1,0 +1,52 @@
+{
+  "name": "InterProductComparison",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "inter_product_comparisons"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "compared_vehicle_name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle" : {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

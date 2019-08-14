@@ -1,0 +1,117 @@
+{
+  "name": "DealerTarget",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_targets"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "vehicle_type": {
+      "type" : "number"
+    },
+    "target_value" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "achieved_value" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "from_date" : {
+      "type" : "date",
+      "required" : true
+    },
+    "to_date" : {
+      "type" : "date",
+      "required" : true
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "incentive_amount": {
+      "type": "number",
+      "default" : 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer_user": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "dealer_sales_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["updateDealerTarget"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["getTargetCompletion", "getNames","getTargetDetails"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

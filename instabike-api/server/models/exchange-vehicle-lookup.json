@@ -1,0 +1,77 @@
+{
+  "name": "ExchangeVehicleLookup",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "exchange_vehicles_lookup"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "vehicle" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "model": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "amount" : {
+      "type": "number"
+    },
+    "km_used_from" : {
+      "type": "number"
+    },
+    "km_used_to" : {
+      "type": "number"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["getManufacturers", "getVehicles", "getPrice"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

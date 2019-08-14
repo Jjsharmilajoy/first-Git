@@ -1,0 +1,50 @@
+{
+  "sheetName": "variant-colors",
+  "model": "VariantColour",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["vehicle_id", "variant_id", "color"],
+  "columns": {
+    "Vehicle Name": {
+      "property": "vehicle_id"
+    },
+    "Variant Name": {
+      "property": "variant_id"
+    },
+    "Variant Color Name": {
+      "model": "VariantColour",
+      "property": "color"
+    },
+    "Color Code": {
+      "model": "VariantColour",
+      "property": "color_codes"
+    },
+    "Image": {
+      "model": "VariantColour",
+      "property": "image_url"
+    }
+  },
+  "relations": {
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "variant_id": {
+      "model": "Variant",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "variant_id"
+        },
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    }
+  }
+}

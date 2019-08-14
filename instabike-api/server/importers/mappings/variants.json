@@ -1,0 +1,254 @@
+{
+  "sheetName": "variants",
+  "model": "Variant",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["vehicle_id", "name"],
+  "columns": {
+    "Vehicle Name": {
+      "property": "vehicle_id"
+    },
+    "Variant Name": {
+      "model": "Variant",
+      "property": "name"
+    },
+    "type": {
+      "model": "Variant",
+      "property": "type"
+    },
+    "description": {
+      "model": "Variant",
+      "property": "description"
+    },
+    "Fuel efficiency overall": {
+      "model": "Variant",
+      "property": "fuel_efficiency_overall"
+    },
+    "displacement": {
+      "model": "Variant",
+      "property": "displacement"
+    },
+    "bhp": {
+      "model": "Variant",
+      "property": "bhp"
+    },
+    "max_power_rpm": {
+      "model": "Variant",
+      "property": "max_power_rpm"
+    },
+    "valve_system": {
+      "model": "Variant",
+      "property": "valve_system"
+    },
+    "nm": {
+      "model": "Variant",
+      "property": "nm"
+    },
+    "torque_rpm": {
+      "model": "Variant",
+      "property": "torque_rpm"
+    },
+    "bore": {
+      "model": "Variant",
+      "property": "bore"
+    },
+    "stroke": {
+      "model": "Variant",
+      "property": "stroke"
+    },
+    "fuel delivery system": {
+      "model": "Variant",
+      "property": "fuel_delivery_system"
+    },
+    "starter_system": {
+      "model": "Variant",
+      "property": "starter_system"
+    },
+    "cooling system": {
+      "model": "Variant",
+      "property": "cooling_system"
+    },
+    "gearbox type": {
+      "model": "Variant",
+      "property": "gearbox_type"
+    },
+    "front brake type": {
+      "model": "Variant",
+      "property": "front_brake_type"
+    },
+    "rear brake type": {
+      "model": "Variant",
+      "property": "rear_brake_type"
+    },
+    "rear_disc_brake": {
+      "model": "Variant",
+      "property": "rear_disc_brake"
+    },
+    "front tyre size": {
+      "model": "Variant",
+      "property": "front_tyre_size"
+    },
+    "rear tyre size": {
+      "model": "Variant",
+      "property": "rear_tyre_size"
+    },
+    "front suspension": {
+      "model": "Variant",
+      "property": "front_suspension"
+    },
+    "rear suspension": {
+      "model": "Variant",
+      "property": "rear_suspension"
+    },
+    "battery": {
+      "model": "Variant",
+      "property": "battery"
+    },
+    "head_light": {
+      "model": "Variant",
+      "property": "head_light"
+    },
+    "tail_light": {
+      "model": "Variant",
+      "property": "tail_light"
+    },
+    "eco_performance": {
+      "model": "Variant",
+      "property": "eco_performance"
+    },
+    "chrome_headlamp": {
+      "model": "Variant",
+      "property": "chrome_headlamp"
+    },
+    "mobile_charging_dc_socket": {
+      "model": "Variant",
+      "property": "mobile_charging_dc_socket"
+    },
+    "large_storage_space": {
+      "model": "Variant",
+      "property": "large_storage_space"
+    },
+    "front_pocket": {
+      "model": "Variant",
+      "property": "front_pocket"
+    },
+    "digital_speedometer_twin_trip_meter_service_indicator": {
+      "model": "Variant",
+      "property": "digital_speedometer_twin_trip_meter_service_indicator"
+    },
+    "smart_digital_instrument_with_gear_position_rpm_indicator": {
+      "model": "Variant",
+      "property": "smart_digital_instrument_with_gear_position_rpm_indicator"
+    },
+    "convenient_dual_luggage_hooks": {
+      "model": "Variant",
+      "property": "convenient_dual_luggage_hooks"
+    },
+    "one_push_central_lock_system": {
+      "model": "Variant",
+      "property": "one_push_central_lock_system"
+    },
+    "long_seat_long_floor_board": {
+      "model": "Variant",
+      "property": "long_seat_long_floor_board"
+    },
+    "easy_start_system": {
+      "model": "Variant",
+      "property": "easy_start_system"
+    },
+    "chrome_muffle_cover": {
+      "model": "Variant",
+      "property": "chrome_muffle_cover"
+    },
+    "colours_available": {
+      "model": "Variant",
+      "property": "colours_available"
+    },
+    "abs": {
+      "model": "Variant",
+      "property": "abs"
+    },
+    "fuel_injection": {
+      "model": "Variant",
+      "property": "fuel_injection"
+    },
+    "seven_step_adjustable_rear_mono_shock_suspension": {
+      "model": "Variant",
+      "property": "seven_step_adjustable_rear_mono_shock_suspension"
+    },
+    "sporty_twin_exhaust": {
+      "model": "Variant",
+      "property": "sporty_twin_exhaust"
+    },
+    "fourty_one_mm_large_diameter_front_forks": {
+      "model": "Variant",
+      "property": "fourty_one_mm_large_diameter_front_forks"
+    },
+    "sporty_graphics": {
+      "model": "Variant",
+      "property": "sporty_graphics"
+    },
+    "sharp_twin_exhaust": {
+      "model": "Variant",
+      "property": "sharp_twin_exhaust"
+    },
+    "luxurious_styling_with_dynamic_cruiser_riding_position": {
+      "model": "Variant",
+      "property": "luxurious_styling_with_dynamic_cruiser_riding_position"
+    },
+    "Overall weight": {
+      "model": "Variant",
+      "property": "overall_weight"
+    },
+    "overall length": {
+      "model": "Variant",
+      "property": "overall_length"
+    },
+    "overall width": {
+      "model": "Variant",
+      "property": "overall_width"
+    },
+    "overall height": {
+      "model": "Variant",
+      "property": "overall_height"
+    },
+    "wheelbase": {
+      "model": "Variant",
+      "property": "wheelbase"
+    },
+    "ground clearance": {
+      "model": "Variant",
+      "property": "ground_clearance"
+    },
+    "seat height": {
+      "model": "Variant",
+      "property": "seat_height"
+    },
+    "wheels": {
+      "model": "Variant",
+      "property": "wheels"
+    },
+    "fuel tank capacity": {
+      "model": "Variant",
+      "property": "fuel_tank_capacity"
+    },
+    "Image": {
+      "model": "Variant",
+      "property": "image_url"
+    },
+    "Highlights": {
+      "model": "Variant",
+      "property": "highlights"
+    }
+  },
+  "relations": {
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    }
+  }
+}

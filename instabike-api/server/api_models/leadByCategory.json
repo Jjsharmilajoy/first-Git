@@ -1,0 +1,23 @@
+{
+  "name": "LeadsByCategory",
+  "idInjection": false,
+  "properties": {
+    "HOT": {
+      "type" : ["Lead"]
+    },
+    "COLD": {
+      "type" : ["Lead"]
+    },
+    "WARM": {
+      "type" : ["Lead"]
+    },
+    "NEW": {
+      "type" : ["Lead"]
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

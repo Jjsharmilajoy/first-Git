@@ -1,0 +1,92 @@
+{
+  "name": "DealerVehicle",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_vehicles"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "is_active" : {
+      "type" : "boolean",
+      "default" : true
+    },
+    "deactivated_at" : {
+      "type" : "date"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "incentive_amount": {
+      "type": "number"
+    },
+    "offer": {
+      "type": "string"
+    },
+    "test_ride_vehicle": {
+      "type": "number"
+    },
+    "slots_per_vechile": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "user_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": ["DEALER_MANAGER"],
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

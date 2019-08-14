@@ -1,0 +1,215 @@
+{
+  "name": "FinancierLead",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "financier_leads"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "tenure" : {
+      "type" : "number",
+      "required" : true
+    },
+    "loan_amount" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "interest_percentage" : {
+      "type" : "number",
+      "default" : 0,
+      "postgresql": {
+        "dataType": "NUMERIC(10,2)"
+      }
+    },
+    "down_payment" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "emi" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "status": {
+      "type" : "number"
+    },
+    "is_financier_verified" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "is_osv_done" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "is_doc_uploaded" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "next_follow_up_on": {
+      "type": "date"
+    },
+    "last_follow_up_done_on": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "lost_on": {
+      "type": "date"
+    },
+    "converted_on": {
+      "type": "date"
+    },
+    "loan_id": {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "comment": {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "mobile_number" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "advance_emi" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "lost_reason" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "lost_reason_comment" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "documents" : {
+      "type" : ["string"]
+    },
+    "loan_processed_on": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "lead" : {
+      "type": "belongsTo",
+      "model": "Lead",
+      "foreignKey": "lead_id"
+    },
+    "financierSales" : {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "user_id"
+    },
+    "dealer" : {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id"
+    },
+    "financierTeam" : {
+      "type": "belongsTo",
+      "model": "FinancierTeam",
+      "foreignKey": "financier_team_id"
+    },
+    "country" : {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": "country_id"
+    },
+    "zone" : {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id"
+    },
+    "state" : {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id"
+    },
+    "city" : {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    },
+    "assignedTo" : {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "assigned_to"
+    },
+    "assignedBy" : {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "assigned_by"
+    },
+    "lead_detail" : {
+      "type": "belongsTo",
+      "model": "LeadDetail",
+      "foreignKey": "lead_detail_id"
+    },
+    "document_details" : {
+      "type": "hasMany",
+      "model": "Document",
+      "foreignKey": "item_type_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": ["fetchFinancierLeadsByStatus", "financierLeadCountByStatus", "getFinancierLeadDetails",
+        "patchAttributes", "fetchLeadsByFilter", "getActivity", "addCommentToLead", "scheduleFollowup"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

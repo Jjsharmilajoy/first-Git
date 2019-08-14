@@ -1,0 +1,61 @@
+{
+  "name": "FinancierTeamMember",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "financier_team_members"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid",
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "from_date": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "to_date": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "financierTeam" : {
+      "type": "belongsTo",
+      "model": "FinancierTeam",
+      "foreignKey": "financier_team_id"
+    },
+    "user" : {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "user_id"
+    }
+  },
+  "acls": [
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

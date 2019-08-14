@@ -1,0 +1,29 @@
+{
+  "sheetName": "dealer-categories",
+  "model": "DealerCategory",
+  "Statergy": "findorcreate",
+  "QueryParams": ["manufacturer_id", "name"],
+  "columns": {
+    "Name": {
+      "model": "DealerCategory",
+      "property": "name"
+    },
+    "Manufacturer": {
+      "property": "manufacturer_id"
+    },
+    "Color-code": {
+      "property": "color_code"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    }
+  }
+}

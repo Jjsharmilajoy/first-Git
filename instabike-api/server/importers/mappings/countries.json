@@ -1,0 +1,14 @@
+{
+  "sheetName": "countries",
+  "model": "Country",
+  "Statergy": "findorcreate",
+  "QueryParams": ["name"],
+  "columns": {
+    "Name": {
+      "model": "Country",
+      "property": "name"
+    }
+  },
+  "relations": {
+  }
+}

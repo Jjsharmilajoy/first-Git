@@ -1,0 +1,204 @@
+{
+  "name": "Manufacturer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "manufacturers"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "office_address" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "display_name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "location" : {
+      "type":"GeoPoint"
+    },
+    "is_active" : {
+      "type" : "boolean",
+      "default" : true
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "slug": {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "logo_url": {
+      "type" : "string",
+      "required" : false,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "image_url": {
+      "type" : "string",
+      "required" : false,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "contact_number": {
+      "type" : "string",
+      "required" : false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "dealers" : {
+      "type": "hasMany",
+      "model": "Dealer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicles" : {
+      "type": "hasMany",
+      "model": "Vehicle",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "zones" : {
+      "type": "hasMany",
+      "model": "Zone",
+      "foreignKey": "manufacturer_id"
+    },
+    "states" : {
+      "type": "hasMany",
+      "model": "State",
+      "foreignKey": "manufacturer_id"
+    },
+    "cities" : {
+      "type": "hasMany",
+      "model": "City",
+      "foreignKey": "manufacturer_id"
+    },
+    "manufacturerFinanciers" : {
+      "type": "hasMany",
+      "model": "ManufacturerFinanciers",
+      "foreignKey": "manufacturer_id"
+    },
+    "dealerCategories" : {
+      "type": "hasMany",
+      "model": "DealerCategory",
+      "foreignKey": "manufacturer_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["getManufacturerDetail", "updateManufacturerDetail", "getManufacturerFinancier",
+        "updateManufacturerFinancier", "updatePassword", "dealers", "patchAttributes", "getDealersCountByCategory",
+        "getDealerSalesEffectiveness", "getZonesByCountry", "getRoles", "getVehicleProperties"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "MANUFACTURER_COUNTRY_HEAD",
+      "permission": "ALLOW",
+      "property" : ["__get__vehicles", "__get__zones", "findById", "getTargetCompletion", "getFinancierDealersNearBy",
+        "getProductSales", "getDealersNearBy", "getFinancierDealershipCount", "getTopPerformingDealers","getConversionRate",
+        "getActiveLeads","getInvoicedLeadAnalysis", "lostAnalysis", "getLeadsList", "__get__dealerCategories"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "MANUFACTURER_ZONE_HEAD",
+      "permission": "ALLOW",
+      "property" : ["__get__vehicles", "__get__zones", "findById", "getTargetCompletion", "getFinancierDealersNearBy",
+        "getProductSales", "getDealersNearBy", "getFinancierDealershipCount", "getTopPerformingDealers","getConversionRate",
+        "getActiveLeads","getInvoicedLeadAnalysis", "lostAnalysis", "getLeadsList", "__get__dealerCategories"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "MANUFACTURER_STATE_HEAD",
+      "permission": "ALLOW",
+      "property" : ["__get__vehicles", "__get__zones", "findById", "getTargetCompletion", "getFinancierDealersNearBy",
+        "getProductSales", "getDealersNearBy", "getFinancierDealershipCount", "getTopPerformingDealers","getConversionRate",
+        "getActiveLeads","getInvoicedLeadAnalysis", "lostAnalysis", "getLeadsList", "__get__dealerCategories"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "MANUFACTURER_CITY_HEAD",
+      "permission": "ALLOW",
+      "property" : ["__get__vehicles", "__get__zones", "findById", "getTargetCompletion", "getFinancierDealersNearBy",
+        "getProductSales", "getDealersNearBy", "getFinancierDealershipCount", "getTopPerformingDealers","getConversionRate",
+        "getActiveLeads","getInvoicedLeadAnalysis", "lostAnalysis", "getLeadsList", "__get__dealerCategories"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["__get__vehicles", "__get__zones"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_SALES",
+      "permission": "ALLOW",
+      "property" : ["__get__vehicles", "__get__zones"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property" : ["__get__vehicles", "__get__zones"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property" : ["getManufacturer", "manufacturerLogin"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["__get__vehicles", "__get__zones", "findById", "getTargetCompletion", "getFinancierDealersNearBy",
+        "getProductSales", "getDealersNearBy", "getFinancierDealershipCount", "getTopPerformingDealers","getConversionRate",
+        "getActiveLeads","getInvoicedLeadAnalysis", "lostAnalysis", "getLeadsList"]
+    }
+  },
+  "methods": []
+}

@@ -1,0 +1,75 @@
+{
+  "name": "LeadActivityDetail",
+  "base": "PersistedModel",
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "type" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "move_from" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "move_to" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "is_deleted" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "comment" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "done_by" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "lead_id" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "doneBy" : {
+      "type" : "Users"
+    },
+    "lead" : {
+      "type" : "Lead"
+    }
+  },
+  "validations": [],
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

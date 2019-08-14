@@ -1,0 +1,91 @@
+{
+  "name": "LeadActivity",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "lead_activities"
+    }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "type" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "move_from" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "move_to" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "is_deleted" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "comment" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "doneBy" : {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "done_by"
+    },
+    "lead" : {
+      "type": "belongsTo",
+      "model": "Lead",
+      "foreignKey": "lead_id"
+    },
+    "financier_lead" : {
+      "type": "belongsTo",
+      "model": "FinancierLead",
+      "foreignKey": "financier_lead_id"
+    },
+    "financier" : {
+      "type" : "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "lead_detail" : {
+      "type" : "belongsTo",
+      "model": "LeadDetail",
+      "foreignKey": "lead_detail_id"
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

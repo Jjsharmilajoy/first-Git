@@ -1,0 +1,33 @@
+{
+  "name": "DealerSalesEffectiveness",
+  "base": "Model",
+  "properties": {
+    "manufacturerId" : {
+      "type" : "string"
+    },
+    "dealerId" : {
+      "type" : "string"
+    },
+    "orderField": {
+      "type" : "string",
+      "required" : true
+    },
+    "orderBy": {
+      "type" : "string",
+      "required" : true
+    },
+    "limit": {
+      "type" : "number",
+      "required" : true
+    },
+    "pageNo": {
+      "type" : "number",
+      "required" : true
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

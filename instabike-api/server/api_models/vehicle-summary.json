@@ -1,0 +1,23 @@
+{
+  "name": "VehicleSummary",
+  "idInjection": false,
+  "properties": {
+    "vehicle": {
+      "type": "Vehicle"
+    },
+    "unitsSold": {
+      "type": "number"
+    },
+    "leadsCreated": {
+      "type": "number"
+    },
+    "ridesBooked": {
+      "type": "number"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

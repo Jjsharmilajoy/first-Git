@@ -1,0 +1,140 @@
+{
+  "name": "ProformaInvoice",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "proforma_invoices"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "manufacturer" : {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer" : {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicle" : {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant" : {
+      "type": "belongsTo",
+      "model": "Variant",
+      "foreignKey": "variant_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant_colour" : {
+      "type": "belongsTo",
+      "model": "VariantColour",
+      "foreignKey": "variant_colour_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "lead" : {
+      "type": "belongsTo",
+      "model": "Lead",
+      "foreignKey": "lead_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "lead_detail": {
+      "type": "belongsTo",
+      "model": "LeadDetail",
+      "foreignKey": "lead_detail_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicle_price": {
+      "type": "belongsTo",
+      "model": "VehiclePrice",
+      "foreignKey": "vehicle_price_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "proforma_invoice_accessory": {
+      "type": "hasMany",
+      "model": "ProformaInvoiceAccessory",
+      "foreignKey": "proforma_invoice_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "proforma_invoice_offer": {
+      "type": "hasMany",
+      "model": "ProformaInvoiceOffer",
+      "foreignKey": "proforma_invoice_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "proforma_invoice_other_charges": {
+      "type": "hasMany",
+      "model": "ProformaInvoiceOtherCharge",
+      "foreignKey": "proforma_invoice_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": ["createProformaInvoiceOffer", "deleteProformaInvoiceOffer", "updateProformaInvoiceAccessories",
+        "updateProformaInvoice", "createOtherCharge", "deleteOtherCharge"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

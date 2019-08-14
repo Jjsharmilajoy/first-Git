@@ -1,0 +1,116 @@
+{
+  "name": "DealerFinancier",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_financiers"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "is_mandatory" : {
+      "type" : "boolean",
+      "default" : false,
+      "required" : true
+    },
+    "other_financier_name" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "order": {
+      "type": "number"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "is_manufacturer_financier" : {
+      "type" : "boolean",
+      "default" : false,
+      "required" : true
+    },
+    "is_manufacturer" : {
+      "type" : "boolean",
+      "default" : false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "city" : {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "state" : {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "zone" : {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "region" : {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": "region_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer" : {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer" : {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

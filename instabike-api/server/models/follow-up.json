@@ -1,0 +1,78 @@
+{
+  "name": "FollowUp",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "follow_ups"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "follow_up_at" : {
+      "type" : "date",
+      "defaultFn" : "now"
+    },
+    "completed_at" : {
+      "type" : "date"
+    },
+    "is_completed" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "comment" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "lead" : {
+      "type": "belongsTo",
+      "model": "Lead",
+      "foreignKey": "lead_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer" : {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer" : {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

@@ -1,0 +1,383 @@
+{
+  "name": "Lead",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "leads"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "mobile_number": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "email": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "gender": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "origin": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "next_followup_on": {
+      "type": "date"
+    },
+    "last_showroom_visit_on": {
+      "type": "date"
+    },
+    "is_invoiced": {
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "invoiced_on": {
+      "type": "date"
+    },
+    "lost_on": {
+      "type": "date"
+    },
+    "status": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "search_criteria_type": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "search_criteria_budget": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "parent_dealer_id": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "location": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "last_followup_on": {
+      "type": "date"
+    },
+    "comments_count": {
+      "type": "number",
+      "default": 0
+    },
+    "is_lost": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_booked": {
+      "type": "boolean",
+      "default": false
+    },
+    "booked_on": {
+      "type": "date"
+    },
+    "income_status": {
+      "type": "number"
+    },
+    "domicile_status": {
+      "type": "number"
+    },
+    "income_range": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "invoice_id": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "source_of_enquiry": {
+      "type": "string",
+      "default": "walk-in",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "pincode": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "lost_reason_text": {
+      "type": "string",
+      "default": "",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "age": {
+      "type": "string",
+      "default": "",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "marital_status": {
+      "type": "string",
+      "default": "",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "occupation": {
+      "type": "string",
+      "default": "",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "proof_type": {
+      "type": "string",
+      "default": "",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "instabike_as_prod_feedback": {
+      "type" : "number"
+    },
+    "dealer_exp_feedback": {
+      "type" : "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "user_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "financier_lead": {
+      "type": "hasMany",
+      "model": "FinancierLead",
+      "foreignKey": "lead_id"
+    },
+    "assignee": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "assigned_to",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id"
+    },
+    "lead_details": {
+      "type": "hasMany",
+      "model": "LeadDetail",
+      "foreignKey": "lead_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "follow_up": {
+      "type": "hasMany",
+      "model": "FollowUp",
+      "foreignKey": "lead_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "owner": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "owner_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id"
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id"
+    },
+    "country": {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": "country_id"
+    },
+    "dealerCategory": {
+      "type": "belongsTo",
+      "model": "DealerCategory",
+      "foreignKey": "dealer_category_id"
+    },
+    "lostReason": {
+      "type": "belongsTo",
+      "model": "LostReason",
+      "foreignKey": "lost_reason_id"
+    },
+    "document": {
+      "type": "hasMany",
+      "model": "Document",
+      "foreignKey": "item_type_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": [
+        "fetchLeadsByStatus",
+        "createNewLead",
+        "getDetails",
+        "getLeadsCountByStatus",
+        "fetchLeadsByFilter",
+        "priceBreakDown",
+        "leadDetail",
+        "lost",
+        "patchAttributes",
+        "getFollowupLeadsByToday",
+        "getFollowupDoneLeadsByToday",
+        "getLeadsCountByToday",
+        "getFollowupCountByToday",
+        "getActivity",
+        "updateLeadVehicleStatusAsLost",
+        "updateLeadVehicleStatusAsDeleted",
+        "updateLead"
+      ]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property": [
+        "getLeadsByStatus",
+        "getMonthlySummary",
+        "addCommentToLead",
+        "scheduleFollowup",
+        "markFollowupComplete",
+        "getInShowroomLeadsByToday",
+        "updateTargetAchievedForNewSales"
+      ]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property": [
+        "getLeadsByStatus",
+        "getMonthlySummary",
+        "addCommentToLead",
+        "scheduleFollowup",
+        "markFollowupComplete",
+        "getInShowroomLeadsByToday",
+        "updateTargetAchievedForNewSales"
+      ]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_SALES",
+      "permission": "ALLOW",
+      "property": [
+        "getLeadsByStatus",
+        "getMonthlySummary",
+        "addCommentToLead",
+        "scheduleFollowup",
+        "markFollowupComplete",
+        "getInShowroomLeadsByToday",
+        "updateTargetAchievedForNewSales"
+      ]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

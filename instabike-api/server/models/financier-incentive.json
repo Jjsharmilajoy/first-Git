@@ -1,0 +1,71 @@
+{
+  "name": "FinancierIncentive",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "financier_incentives"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : false,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "from_date" : {
+      "type" : "date",
+      "required" : true
+    },
+    "to_date" : {
+      "type" : "date"
+    },
+    "incentive_amount" : {
+      "type" : "number",
+      "required" : true
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "city" : {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

@@ -1,0 +1,173 @@
+{
+  "sheetName": "leads",
+  "model": "Lead",
+  "criteria": "findOrCreate",
+  "criteriaQuery": ["mobile_number", "gender"],
+  "columns": {
+    "Name": {
+      "property": "name"
+    },
+    "Mobile": {
+      "property": "mobile_number"
+    },
+    "User": {
+      "property": "user_id"
+    },
+    "Gender": {
+      "property": "gender"
+    },
+    "Type": {
+      "property": "type"
+    },
+    "Manufacturer": {
+      "property": "manufacturer_id"
+    },
+    "Dealer Code": {
+      "property": "dealer_id"
+    },
+    "Dealer category": {
+      "property": "dealer_category_id"
+    },
+    "Country": {
+      "property": "country_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "Status": {
+      "property": "status"
+    },
+    "Category": {
+      "property": "category"
+    },
+    "Is Invoiced": {
+      "property": "is_invoiced"
+    },
+    "Is Lost": {
+      "property": "is_lost"
+    },
+    "Assigned To": {
+      "property": "assigned_to"
+    },
+    "Invoiced on": {
+      "property": "invoiced_on"
+    },
+    "Lost on": {
+      "property": "lost_on"
+    },
+    "created_at": {
+      "property": "created_at"
+    },
+    "Lost Reason": {
+      "property": "lost_reason_id"
+    },
+    "Income Status": {
+      "property": "income_status"
+    },
+    "Domicile Status": {
+      "property": "domicile_status"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "dealer_code",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "dealer_category_id": {
+      "model": "DealerCategory",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_category_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    },
+    "assigned_to": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_no",
+          "objectProperty": "assigned_to"
+        }
+      ]
+    },
+    "user_id": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_no",
+          "objectProperty": "user_id"
+        }
+      ]
+    },
+    "lost_reason_id": {
+      "model": "LostReason",
+      "queryDependencies": [
+        {
+          "queryProperty": "reason",
+          "objectProperty": "lost_reason_id"
+        }
+      ]
+    }
+  }
+}

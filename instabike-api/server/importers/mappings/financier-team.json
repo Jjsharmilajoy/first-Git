@@ -1,0 +1,86 @@
+{
+  "sheetName": "financier-team",
+  "model": "FinancierTeam",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["name", "owned_by", "financier_id"],
+  "columns": {
+    "Name": {
+      "model": "FinancierTeam",
+      "property": "name"
+    },
+    "Owner": {
+      "property": "owned_by"
+    },
+    "Creator": {
+      "property": "created_by"
+    },
+    "Financier": {
+      "property": "financier_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "City": {
+      "property": "city_id"
+    }
+  },
+  "relations": {
+    "owned_by": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "email",
+          "objectProperty": "owned_by"
+        }
+      ]
+    },
+    "created_by": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "email",
+          "objectProperty": "created_by"
+        }
+      ]
+    },
+    "financier_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "financier_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    }
+  }
+}

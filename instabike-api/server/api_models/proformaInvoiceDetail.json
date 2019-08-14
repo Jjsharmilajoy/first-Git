@@ -1,0 +1,25 @@
+{
+  "name": "ProformaInvoiceDetail",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "properties": {
+    "proformaInvoice" : {
+      "type" : "ProformaInvoice"
+    },
+    "nonMandatoryAccessories" : {
+      "type": "[DealerAccessory]"
+    },
+    "mandatoryAccessories" : {
+      "type": "[DealerAccessory]"
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

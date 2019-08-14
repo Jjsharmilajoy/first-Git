@@ -1,0 +1,54 @@
+{
+  "sheetName": "states",
+  "model": "State",
+  "Statergy": "findorcreate",
+  "QueryParams": ["manufacturer_id", "zone_id", "name"],
+  "columns": {
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Zone Name": {
+      "property": "zone_id"
+    },
+    "Name": {
+      "model": "State",
+      "property": "name"
+    },
+    "Country Name": {
+      "property": "country_id"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

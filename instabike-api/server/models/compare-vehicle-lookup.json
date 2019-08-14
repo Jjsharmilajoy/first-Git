@@ -1,0 +1,49 @@
+{
+  "name": "CompareVehicleLookup",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "compare_vehicle_lookup"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "group_name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "label_and_value" : {
+      "type" : ["Object"]
+    },
+    "group_order" : {
+      "type" : "number",
+      "required" : true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id"
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["find"]
+    }
+  },
+  "methods": []
+}

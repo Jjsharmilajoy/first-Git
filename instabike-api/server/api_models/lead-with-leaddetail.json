@@ -1,0 +1,17 @@
+{
+  "name": "LeadWithLeadDetail",
+  "base": "PersistedModel",
+  "properties": {
+    "lead" : {
+      "type" : "Lead"
+    },
+    "leadDetails" : {
+      "type" : ["LeadDetail"]
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

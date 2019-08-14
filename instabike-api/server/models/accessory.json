@@ -1,0 +1,100 @@
+{
+  "name": "Accessory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "accessories"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "item_code" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "price" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "sgst_price" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "cgst_price" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "is_mandatory" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "is_active" : {
+      "type" : "boolean",
+      "default" : true
+    },
+    "description" : {
+      "type" : "string",
+      "required" : false
+    },
+    "image_url" : {
+      "type" : "string",
+      "required" : false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealerAccessories": {
+      "type": "hasMany",
+      "model": "DealerAccessory",
+      "foreignKey": "accessory_id"
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

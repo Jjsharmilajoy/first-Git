@@ -1,0 +1,143 @@
+{
+  "name": "VehiclePrice",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "vehicle_prices"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "ex_showroom_price": {
+      "type": "number",
+      "default": 0
+    },
+    "rto_charges": {
+      "type": "number",
+      "default": 0
+    },
+    "road_safety_tax": {
+      "type": "number",
+      "default": 0
+    },
+    "life_tax": {
+      "type": "number",
+      "default": 0
+    },
+    "handling_charges": {
+      "type": "number",
+      "default": 0
+    },
+    "other_charges": {
+      "type": "number",
+      "default": 0
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "onroad_price": {
+      "type": "number",
+      "default": 0
+    },
+    "accessories_price": {
+      "type": "number",
+      "default": 0
+    },
+    "extented_warranty": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type" : "boolean",
+      "default" : true
+    },
+    "is_insurance_split": {
+      "type" : "boolean",
+      "default" : false
+    },
+    "is_prefered": {
+      "type" : "boolean",
+      "default" : false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant": {
+      "type": "belongsTo",
+      "model": "Variant",
+      "foreignKey": "variant_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant_colour": {
+      "type": "belongsTo",
+      "model": "VariantColour",
+      "foreignKey": "variant_colours_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "vehicle_insurances": {
+      "type": "hasMany",
+      "model": "VehicleInsurance",
+      "foreignKey": "vehicle_price_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["patchOrCreate"]
+    }
+  },
+  "methods": []
+}

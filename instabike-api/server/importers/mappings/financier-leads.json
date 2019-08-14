@@ -1,0 +1,218 @@
+{
+  "sheetName": "financier_leads",
+  "model": "FinancierLead",
+  "criteria": "findOrCreate",
+  "criteriaQuery": ["mobile_number", "gender", "lead_id", "lead_detail_id", "financier_id"],
+  "columns": {
+    "Name": {
+      "property": "name"
+    },
+    "Mobile": {
+      "property": "mobile_number"
+    },
+    "Tenure": {
+      "property": "tenure"
+    },
+    "Loan Amount": {
+      "property": "loan_amount"
+    },
+    "Interest": {
+      "property": "interest_percentage"
+    },
+    "Down Payment": {
+      "property": "down_payment"
+    },
+    "EMI": {
+      "property": "emi"
+    },
+    "Status": {
+      "property": "status"
+    },
+    "Is Financier Verified": {
+      "property": "is_financier_verified"
+    },
+    "Is Osv Done": {
+      "property": "is_osv_done"
+    },
+    "Is Doc Uploaded": {
+      "property": "is_doc_uploaded"
+    },
+    "Created At": {
+      "property": "created_at"
+    },
+    "Lost On": {
+      "property": "lost_on"
+    },
+    "Converted On": {
+      "property": "converted_on"
+    },
+    "Loan Id": {
+      "property": "loan_id"
+    },
+    "Advance EMI": {
+      "property": "advance_emi"
+    },
+    "Lost Reason": {
+      "property": "lost_reason"
+    },
+    "Comment": {
+      "property": "lost_reason_comment"
+    },
+    "Loan Processed On": {
+      "property": "loan_processed_on"
+    },
+    "Financier": {
+      "property": "financier_id"
+    },
+    "Lead": {
+      "property": "lead_id"
+    },
+    "LeadDetail": {
+      "property": "lead_detail_id"
+    },
+    "User": {
+      "property": "user_id"
+    },
+    "Dealer": {
+      "property": "dealer_id"
+    },
+    "Financier Team": {
+      "property": "financier_team_id"
+    },
+    "Country": {
+      "property": "country_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "Assigned To": {
+      "property": "assigned_to"
+    },
+    "Assigned By": {
+      "property": "assigned_by"
+    },
+    "documents": {
+      "property": "documents"
+    }
+  },
+  "relations": {
+    "financier_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "financier_id"
+        }
+      ]
+    },
+    "lead_id": {
+      "model": "Lead",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_number",
+          "objectProperty": "lead_id"
+        }
+      ]
+    },
+    "lead_detail_id": {
+      "model": "LeadDetail",
+      "queryDependencies": [
+        {
+          "queryProperty": "is_deleted",
+          "objectProperty": "lead_detail_id"
+        },
+        {
+          "queryProperty": "lead_id",
+          "objectProperty": "lead_id"
+        }
+      ]
+    },
+    "user_id": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_no",
+          "objectProperty": "user_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "dealer_code",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "financier_team_id": {
+      "model": "FinancierTeam",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "financier_team_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    },
+    "assigned_to": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_no",
+          "objectProperty": "assigned_to"
+        }
+      ]
+    },
+    "assigned_by": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_no",
+          "objectProperty": "assigned_by"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+version: '2'
+services:
+  api: &env_api
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    env_file: .env
+    environment:
+      - NPM_CONFIG_PREFIX=/node_modules
+    volumes:
+      - "npm_node_modules:/node_modules"
+      - ./:/instabike-api
+volumes:
+  npm_node_modules:

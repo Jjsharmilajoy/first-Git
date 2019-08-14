@@ -1,0 +1,134 @@
+{
+  "sheetName": "profoma_invoice",
+  "model": "ProformaInvoice",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["lead_id", "lead_detail_id", "vehicle_id", "dealer_id"],
+  "columns": {
+    "Manufacturer": {
+      "property": "manufacturer_id"
+    },
+    "Dealer Code": {
+      "property": "dealer_id"
+    },
+    "Lead": {
+      "property": "lead_id"
+    },
+    "LeadDetail": {
+      "property": "lead_detail_id"
+    },
+    "Vehicle": {
+      "property": "vehicle_id"
+    },
+    "Variant": {
+      "property": "variant_id"
+    },
+    "Variant color": {
+      "property": "variant_colour_id"
+    },
+    "Vehicle Price": {
+      "property": "vehicle_price_id"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "dealer_code",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "lead_id": {
+      "model": "Lead",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_number",
+          "objectProperty": "lead_id"
+        }
+      ]
+    },
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "variant_id": {
+      "model": "Variant",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "variant_id"
+        },
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "variant_colour_id": {
+      "model": "VariantColour",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "variant_colour_id"
+        },
+        {
+          "queryProperty": "variant_id",
+          "objectProperty": "variant_id"
+        },
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "lead_detail_id": {
+      "model": "LeadDetail",
+      "queryDependencies": [
+        {
+          "queryProperty": "is_deleted",
+          "objectProperty": "lead_detail_id"
+        },
+        {
+          "queryProperty": "lead_id",
+          "objectProperty": "lead_id"
+        }
+      ]
+    },
+    "vehicle_price_id": {
+      "model": "VehiclePrice",
+      "queryDependencies": [
+        {
+          "queryProperty": "status",
+          "objectProperty": "vehicle_price_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        },
+        {
+          "queryProperty": "dealer_id",
+          "objectProperty": "dealer_id"
+        },
+        {
+          "queryProperty": "variant_id",
+          "objectProperty": "variant_id"
+        }
+      ]
+    }
+  }
+}

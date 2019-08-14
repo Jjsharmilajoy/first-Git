@@ -1,0 +1,56 @@
+{
+  "name": "ActiveLeads",
+  "base": "PersistedModel",
+  "properties": {
+    "manufacturer_id" : {
+      "type" : "string"
+    },
+    "zoneIds" : {
+      "type": ["string"]
+    },
+    "stateIds" : {
+      "type": ["string"]
+    },
+    "cityIds" : {
+      "type": ["string"]
+    },
+    "dealerCategoryIds" : {
+      "type": ["string"]
+    },
+    "productIds" : {
+      "type": ["string"]
+    },
+    "fromDate": {
+      "type" : "string"
+    },
+    "toDate": {
+      "type" : "string"
+    },
+    "orderField": {
+      "type" : "string",
+      "required" : true
+    },
+    "orderBy": {
+      "type" : "string",
+      "required" : true,
+      "default": "ASC"
+    },
+    "limit": {
+      "type" : "number",
+      "required" : true
+    },
+    "pageNo": {
+      "type" : "number",
+      "required" : true
+    },
+    "tabGroup": {
+      "type" : "string",
+      "required" : true
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

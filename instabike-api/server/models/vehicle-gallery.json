@@ -1,0 +1,88 @@
+{
+  "name": "VehicleGallery",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "vehicle_galleries"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "image_url" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "video_url" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "is_three_sixty": {
+      "type": "boolean",
+      "default" : false
+    },
+    "position": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle" : {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant" : {
+      "type": "belongsTo",
+      "model": "Variant",
+      "foreignKey": "variant_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant_colour" : {
+      "type": "belongsTo",
+      "model": "VariantColour",
+      "foreignKey": "variant_colour_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property" : ["downloadOriginal", "download"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

@@ -1,0 +1,81 @@
+{
+  "sheetName": "lead-users",
+  "model": "Users",
+  "criteria": "findOrCreate",
+  "criteriaQuery": ["mobile_no", "user_type_name"],
+  "columns": {
+    "First Name": {
+      "property": "first_name"
+    },
+    "Last Name": {
+      "property": "last_name"
+    },
+    "Mobile": {
+      "property": "mobile_no"
+    },
+    "Password": {
+      "model": "Users",
+      "property": "password"
+    },
+    "Gender": {
+      "property": "gender"
+    },
+    "User Type Name": {
+      "property": "user_type_name",
+      "defaultValue": "Customer"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "Country": {
+      "property": "country_id"
+    },
+    "created_at": {
+      "property": "created_at"
+    }
+  },
+  "relations": {
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

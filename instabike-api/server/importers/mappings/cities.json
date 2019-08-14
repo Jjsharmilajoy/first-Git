@@ -1,0 +1,70 @@
+{
+  "sheetName": "cities",
+  "model": "City",
+  "Statergy": "findorcreate",
+  "QueryParams": ["manufacturer_id", "zone_id", "state_id", "name"],
+  "columns": {
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Zone Name": {
+      "property": "zone_id"
+    },
+    "State Name": {
+      "property": "state_id"
+    },
+    "Country Name": {
+      "property": "country_id"
+    },
+    "Name": {
+      "model": "City",
+      "property": "name"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        },
+        {
+          "queryProperty": "zone_id",
+          "objectProperty": "zone_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

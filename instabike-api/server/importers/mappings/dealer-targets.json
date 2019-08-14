@@ -1,0 +1,64 @@
+{
+  "sheetName": "dealer-targets",
+  "model": "DealerTarget",
+  "criteria": "upsertwithwhere",
+  "criteriaQuery": ["from_date", "to_date", "dealer_id", "dealer_sales_id"],
+  "columns": {
+    "Dealer Code": {
+      "property": "dealer_id"
+    },
+    "Type": {
+      "property": "vehicle_type"
+    },
+    "Mobile No": {
+      "property": "dealer_sales_id"
+    },
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Name": {
+      "property": "name"
+    },
+    "Target": {
+      "property": "target_value"
+    },
+    "Achived": {
+      "property": "achieved_value"
+    },
+    "From Date": {
+      "property": "from_date"
+    },
+    "To Date": {
+      "property": "to_date"
+    }
+  },
+  "relations": {
+    "dealer_sales_id": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_no",
+          "objectProperty": "dealer_sales_id"
+        }
+      ]
+    },
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "dealer_code",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    }
+  }
+}

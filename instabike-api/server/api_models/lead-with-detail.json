@@ -1,0 +1,103 @@
+{
+  "name": "LeadWithDetail",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "mobile_number" : {
+      "type" : "string"
+    },
+    "gender" : {
+      "type" : "string"
+    },
+    "origin" : {
+      "type" : "string"
+    },
+    "next_follow_on" : {
+      "type" : "date"
+    },
+    "last_showroom_visit_on" : {
+      "type" : "date"
+    },
+    "is_invoiced" : {
+      "type" : "boolean"
+    },
+    "type" : {
+      "type" : "string"
+    },
+    "invoiced_on" : {
+      "type" : "date"
+    },
+    "status" : {
+      "type" : "number"
+    },
+    "category" : {
+      "type" : "string"
+    },
+    "search_criteria_type" : {
+      "type" : "string"
+    },
+    "search_criteria_budget" : {
+      "type" : "string"
+   },
+   "parent_dealer_id" : {
+     "type" : "string"
+   },
+   "location" : {
+     "type" : "string"
+    },
+    "created_at": {
+      "type": "date"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "assigned_to": {
+      "type": "string"
+    },
+    "dealer_id": {
+      "type": "string"
+    },
+    "manufacturer_id": {
+      "type": "string"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "city_id": {
+      "type": "string"
+    },
+    "state_id": {
+      "type": "string"
+    },
+    "zone_id": {
+      "type": "string"
+    },
+    "dealer_category_id": {
+      "type": "string"
+    },
+    "lead_details": {
+      "type": ["LeadDetail"]
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

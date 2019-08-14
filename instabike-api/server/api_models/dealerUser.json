@@ -1,0 +1,22 @@
+{
+  "name": "DealerUser",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "properties": {
+    "dealer" : {
+      "type" : "Dealer"
+    },
+    "user" : {
+      "type": "Users"
+    }
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

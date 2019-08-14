@@ -1,0 +1,69 @@
+{
+  "sheetName": "dealer-managers",
+  "model": "Users",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["mobile_no", "user_type_name", "user_type_id"],
+  "columns": {
+    "Dealer Pincode": {
+      "property": "dealer_pincode"
+    },
+    "Dealer Name": {
+      "property": "user_type_id"
+    },
+    "Dealer Manager - First name": {
+      "model": "Users",
+      "property": "first_name"
+    },
+    "Dealer Manager - Last name": {
+      "model": "Users",
+      "property": "last_name"
+    },
+    "Dealer Manager - Email-id": {
+      "model": "Users",
+      "property": "email"
+    },
+    "Mobile no": {
+      "model": "Users",
+      "property": "mobile_no"
+    },
+    "User Type Name": {
+      "model": "Users",
+      "property": "user_type_name"
+    },
+    "Password": {
+      "model": "Users",
+      "property": "password"
+    },
+    "User Type Name": {
+      "property": "user_type_name",
+      "defaultValue": "Dealer"
+    },
+    "Country Name": {
+      "property": "country_id"
+    }
+  },
+  "relations": {
+    "user_type_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "user_type_id"
+        },
+        {
+          "queryProperty": "pincode",
+          "objectProperty": "dealer_pincode"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

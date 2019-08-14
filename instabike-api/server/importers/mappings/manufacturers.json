@@ -1,0 +1,38 @@
+{
+  "sheetName": "manufacturer",
+  "model": "Manufacturer",
+  "Statergy": "findorcreate",
+  "QueryParams": ["slug"],
+  "columns": {
+    "Name": {
+      "model": "Manufacturer",
+      "property": "name"
+    },
+    "Slug": {
+      "model": "Manufacturer",
+      "property": "slug"
+    },
+    "Office Address": {
+      "model": "Manufacturer",
+      "property": "office_address"
+    },
+    "Display Name": {
+      "model": "Manufacturer",
+      "property": "display_name"
+    },
+    "Logo": {
+      "model": "Manufacturer",
+      "property": "logo_url"
+    },
+    "Image": {
+      "model": "Manufacturer",
+      "property": "image_url"
+    },
+    "Location": {
+      "model": "Manufacturer",
+      "property": "location"
+    }
+  },
+  "relations": {
+  }
+}

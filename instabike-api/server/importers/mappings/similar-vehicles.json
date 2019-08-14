@@ -1,0 +1,34 @@
+{
+  "sheetName": "similar-vehicles",
+  "model": "SimilarVehicle",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["vehicle_id", "similar_vehicle_id"],
+  "columns": {
+    "Vehicle Name": {
+      "property": "vehicle_id"
+    },
+    "Similar Vehicle Name": {
+      "property": "similar_vehicle_id"
+    }
+  },
+  "relations": {
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "similar_vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "similar_vehicle_id"
+        }
+      ]
+    }
+  }
+}

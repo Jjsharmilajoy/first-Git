@@ -1,0 +1,226 @@
+{
+  "name": "Users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "users"
+     }
+   },
+  "restrictResetPasswordTokenScope": true,
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "first_name" : {
+      "type": "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "last_name" : {
+      "type": "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "email" : {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "username" : {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "mobile_no": {
+      "type": "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "official_contact_number": {
+      "type": "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "gender" : {
+      "type": "string",
+      "required": false
+    },
+    "age" : {
+      "type": "number",
+      "required": false
+    },
+    "dob" : {
+      "type": "date",
+      "required": false
+    },
+    "is_mobile_verified" : {
+      "type": "boolean",
+      "default": false
+    },
+    "is_active" : {
+      "type": "boolean",
+      "default": true
+    },
+    "address" : {
+      "type": "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "user_type_name" : {
+      "type": "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "user_type_id" : {
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "is_new" : {
+      "type": "boolean",
+      "default": true
+    },
+    "is_onboarding_done" : {
+      "type": "boolean",
+      "default": false
+    },
+    "is_credential_send" : {
+      "type": "boolean",
+      "default": false
+    },
+    "temp_email" : {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "temp_mobile_no" : {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user_role": {
+      "type": "hasMany",
+      "model": "UserRole",
+      "foreignKey": "user_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "AccessToken": {
+      "type": "hasMany",
+      "model": "AccessToken",
+      "foreignKey": "userId"
+    },
+    "manager": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "manager_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "State",
+      "foreignKey": "state_id"
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "Zone",
+      "foreignKey": "zone_id"
+    },
+    "country": {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": "country_id"
+    },
+    "financierTeams": {
+      "type": "hasMany",
+      "model": "FinancierTeam",
+      "foreignKey": "owned_by"
+    },
+    "financierBranch": {
+      "type": "hasMany",
+      "model": "FinancierBranch",
+      "foreignKey": "financier_city_head_id"
+    }
+  },
+  "indexes": {
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property" : ["prototype.patchAttributes", "changePassword"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property" : ["getCityByIp", "geoFencingByPincode", "validateAccessToken", "updateEmail"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["updatePassword", "findById", "customerMobExists", "createCustomer", "updateCustomer",
+        "getUserDetail", "sendOtp", "validateOtp", "resendOtp", "resetEmail", "changeMobileNumberWithOTP",
+        "setMobileNumberAfterValidation"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "ignoreACL": true,
+      "disableAllExcept": ["getCityByIp", "geoFencingByPincode", "updatePassword",
+        "findById", "customerMobExists", "createCustomer", "updateCustomer", "prototype.patchAttributes",
+        "changePassword", "logout", "setPassword", "validateAccessToken", "getUserDetail",
+        "sendOtp", "validateOtp", "resendOtp", "resetEmail", "updateEmail", "changeMobileNumberWithOTP",
+        "setMobileNumberAfterValidation"]
+    }
+  },
+  "methods": []
+}

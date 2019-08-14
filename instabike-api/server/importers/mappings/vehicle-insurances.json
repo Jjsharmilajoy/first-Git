@@ -1,0 +1,105 @@
+{
+  "sheetName": "vehicle-insurance",
+  "model": "VehicleInsurance",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["vehicle_price_id", "type", "validity"],
+  "columns": {
+    "Vehicle Name": {
+      "property": "vehicle_id"
+    },
+    "Variant Name": {
+      "property": "variant_id"
+    },
+    "Variant Colour Name": {
+      "property": "variant_colours_id"
+    },
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Dealer Name": {
+      "property": "dealer_id"
+    },
+    "Type": {
+      "model": "VehicleInsurance",
+      "property": "type"
+    },
+    "Validity": {
+      "model": "VehicleInsurance",
+      "property": "validity"
+    },
+    "Amount": {
+      "model": "VehicleInsurance",
+      "property": "amount"
+    },
+    "Status": {
+      "property": "vehicle_price_id"
+    }
+  },
+  "relations": {
+    "vehicle_price_id": {
+      "model": "VehiclePrice",
+      "queryDependencies": [
+        {
+          "queryProperty": "status",
+          "objectProperty": "vehicle_price_id"
+        },
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        },
+        {
+          "queryProperty": "variant_id",
+          "objectProperty": "variant_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        },
+        {
+          "queryProperty": "dealer_id",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "variant_id": {
+      "model": "Variant",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "variant_id"
+        },
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    }
+  }
+}

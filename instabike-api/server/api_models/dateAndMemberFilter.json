@@ -1,0 +1,19 @@
+{
+  "name": "DateAndMemberFilter",
+  "properties": {
+    "fromDate" : {
+      "type": "string"
+    },
+    "toDate" : {
+      "type": "string"
+    },
+    "teamIds": {
+      "type": ["string"]
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

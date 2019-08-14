@@ -1,0 +1,39 @@
+{
+  "name": "LeadsCountByStatus",
+  "base": "PersistedModel",
+  "createOnlyInstance": true,
+  "properties": {
+    "manufacturer_id" : {
+      "type" : "string"
+    },
+    "zoneIds" : {
+      "type": ["string"]
+    },
+    "stateIds" : {
+      "type": ["string"]
+    },
+    "cityIds" : {
+      "type": ["string"]
+    },
+    "category": {
+      "type": "string"
+    },
+    "dealerCategoryIds" : {
+      "type": ["string"]
+    },
+    "vehicleIds" : {
+      "type": ["string"]
+    },
+    "fromDate": {
+      "type" : "string"
+    },
+    "toDate": {
+      "type" : "string"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "FinancierLeadWithDetail",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "tenure" : {
+      "type" : "number"
+    },
+    "loan_amount" : {
+      "type" : "number"
+    },
+    "interest_percentage" : {
+      "type" : "number"
+    },
+    "down_payment" : {
+      "type" : "number"
+    },
+    "emi" : {
+      "type" : "number"
+    },
+    "status": {
+      "type" : "string"
+    },
+    "is_financier_verified" : {
+      "type" : "boolean"
+    },
+    "is_osv_done" : {
+      "type" : "boolean"
+    },
+    "is_doc_uploaded" : {
+      "type" : "boolean"
+    },
+    "next_follow_up_on": {
+      "type": "date"
+    },
+    "last_follow_up_done_on": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "lost_on": {
+      "type": "date"
+    },
+    "converted_on": {
+      "type": "date"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "assigned_to": {
+      "type": "string"
+    },
+    "dealer_id": {
+      "type": "string"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "city_id": {
+      "type": "string"
+    },
+    "state_id": {
+      "type": "string"
+    },
+    "zone_id": {
+      "type": "string"
+    },
+    "lead" : {
+      "type" : "Lead"
+    },
+    "leadDetails" : {
+      "type" : ["LeadDetail"]
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

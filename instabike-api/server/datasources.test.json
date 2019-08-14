@@ -1,0 +1,15 @@
+{
+  "postgres": {
+    "host": "${DB_HOST}",
+    "port": "${DB_PORT}",
+    "database": "${TEST_DB_NAME}",
+    "password": "${DB_PASSWORD}",
+    "name": "postgres",
+    "user": "${DB_USER_NAME}",
+    "connector": "postgresql"
+  },
+  "lb-memory": {
+    "name": "lb-memory",
+    "connector": "memory"
+  }
+}

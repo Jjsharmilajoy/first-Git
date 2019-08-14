@@ -1,0 +1,95 @@
+{
+  "name": "FinancierDealer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "financier_dealers"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid",
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "from_date": {
+      "type": "date"
+    },
+    "to_date": {
+      "type": "date"
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "indexes": {
+    "financier_dealer_key": {
+      "keys": {"dealer_id": 1, "financier_team_id": 1, "financier_id": 1},
+      "options": {"unique": false}
+    },
+    "financier_user_dealer_key": {
+      "keys": {"dealer_id": 1, "financier_team_id": 1, "user_id": 1},
+      "options": {"unique": false}
+    }
+  },
+  "validations": [],
+  "relations": {
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "user_id"
+    },
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id"
+    },
+    "financierTeam": {
+      "type": "belongsTo",
+      "model": "FinancierTeam",
+      "foreignKey": "financier_team_id"
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "City",
+      "foreignKey": "city_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_CITY_HEAD",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate", "create"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate", "create"]
+    }
+  ],
+  "mixins": {
+
+  },
+  "methods": []
+}

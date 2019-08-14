@@ -1,0 +1,66 @@
+{
+  "sheetName": "vehicles",
+  "model": "Vehicle",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["manufacturer_id", "name"],
+  "columns": {
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Vehicle Name": {
+      "model": "Vehicle",
+      "property": "name"
+    },
+    "slug": {
+      "model": "Vehicle",
+      "property": "slug"
+    },
+    "description": {
+      "model": "Vehicle",
+      "property": "description"
+    },
+    "type": {
+      "model": "Vehicle",
+      "property": "type"
+    },
+    "displacement" : {
+      "model": "Vehicle",
+      "property": "displacement"
+    },
+    "bhp" : {
+      "model": "Vehicle",
+      "property": "bhp"
+    },
+    "rpm" : {
+      "model": "Vehicle",
+      "property": "rpm"
+    },
+    "Overall weight" : {
+      "model": "Vehicle",
+      "property": "overall_weight"
+    },
+    "Fuel efficiency overall" : {
+      "model": "Vehicle",
+      "property": "fuel_efficiency_overall"
+    },
+    "Image": {
+      "model": "Vehicle",
+      "property": "image_url"
+    },
+    "Brochure": {
+      "model": "Vehicle",
+      "property": "brochure_url"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    }
+  }
+}

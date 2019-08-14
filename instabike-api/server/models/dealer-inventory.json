@@ -1,0 +1,105 @@
+{
+  "name": "DealerInventory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_inventories"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "stock_available" : {
+      "type" : "number"
+    },
+    "in_transit" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "booked" : {
+      "type" : "number"
+    },
+    "waiting_period" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle": {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id"
+    },
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant": {
+      "type": "belongsTo",
+      "model": "Variant",
+      "foreignKey": "variant_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variant_colour": {
+      "type": "belongsTo",
+      "model": "VariantColour",
+      "foreignKey": "variant_colours_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "dealer_manager": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "dealer_manager_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate", "getStocks", "vehicleInventoryDetails", "updateStocks"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["patchOrCreate", "getStocks", "vehicleInventoryDetails",
+      "updateStocks"]
+    }
+  },
+  "methods": []
+}

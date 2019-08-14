@@ -1,0 +1,16 @@
+{
+  "name": "DateFilter",
+  "properties": {
+    "fromDate" : {
+      "type": "string"
+    },
+    "toDate" : {
+      "type": "string"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

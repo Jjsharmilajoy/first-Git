@@ -1,0 +1,410 @@
+{
+  "name": "Variant",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "variants"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "is_active" : {
+      "type" : "boolean",
+      "default": true
+    },
+    "type" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "description" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "fuel_efficiency_overall" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "displacement" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "bhp" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "max_power_rpm" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "valve_system" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "nm" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "torque_rpm" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "bore" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "stroke" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "fuel_delivery_system" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "starter_system" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "cooling_system" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "gearbox_type" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "front_brake_type" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "rear_brake_type" : {
+      "type": "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "rear_disc_brake" : {
+      "type": "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "front_tyre_size" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "rear_tyre_size" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "front_suspension" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "rear_suspension" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "battery" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "head_light" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "tail_light" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "eco_performance" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "chrome_headlamp" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "mobile_charging_dc_socket" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "large_storage_space" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "front_pocket" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "digital_speedometer_twin_trip_meter_service_indicator" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "smart_digital_instrument_with_gear_position_rpm_indicator" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "convenient_dual_luggage_hooks" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "one_push_central_lock_system" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "long_seat_long_floor_board" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "easy_start_system" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "chrome_muffle_cover" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "colours_available" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "abs" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "fuel_injection" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "seven_step_adjustable_rear_mono_shock_suspension" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "sporty_twin_exhaust" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "fourty_one_mm_large_diameter_front_forks" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "sporty_graphics" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "sharp_twin_exhaust" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "luxurious_styling_with_dynamic_cruiser_riding_position" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+      }
+    },
+    "overall_weight" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "overall_length" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "overall_width" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "overall_height" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "wheelbase" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "ground_clearance" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "seat_height" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "wheels" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "fuel_tank_capacity" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "image_url": {
+      "type" : "string",
+      "required" : false,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "highlights" : {
+      "type" : ["string"]
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicle" : {
+      "type": "belongsTo",
+      "model": "Vehicle",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "colors" : {
+      "type": "hasMany",
+      "model": "VariantColour",
+      "foreignKey": "variant_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "prices" : {
+      "type": "hasOne",
+      "model": "VehiclePrice",
+      "foreignKey": "variant_id"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "acls": [],
+  "methods": []
+}

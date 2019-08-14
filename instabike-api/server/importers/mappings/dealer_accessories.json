@@ -1,0 +1,85 @@
+{
+  "sheetName": "dealer-accessories",
+  "model": "DealerAccessory",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["manufacturer_id", "dealer_id", "vehicle_id", "name"],
+  "columns": {
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Dealer Name": {
+      "property": "dealer_id"
+    },
+    "Vehicle Name": {
+      "property": "vehicle_id"
+    },
+    "Accessory Name": {
+      "model": "DealerAccessory",
+      "property": "name"
+    },
+    "Price": {
+      "model": "DealerAccessory",
+      "property": "price"
+    },
+    "SGST Price" : {
+      "model": "DealerAccessory",
+      "property": "sgst_price"
+    },
+    "GST Price" : {
+      "model": "DealerAccessory",
+      "property": "gst_price"
+    },
+    "Item Code": {
+      "property": "accessory_id"
+    },
+    "Is Mandatory": {
+      "property": "is_mandatory"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "vehicle_id": {
+      "model": "Vehicle",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "vehicle_id"
+        }
+      ]
+    },
+    "accessory_id": {
+      "model": "Accessory",
+      "queryDependencies": [
+        {
+          "queryProperty": "item_code",
+          "objectProperty": "accessory_id"
+        },
+        {
+          "queryProperty": "vehicle_id",
+          "objectProperty": "vehicle_id"
+        },
+        {
+          "queryProperty": "dealer_id",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    }
+  }
+}

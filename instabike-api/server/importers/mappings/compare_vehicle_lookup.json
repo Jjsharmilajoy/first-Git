@@ -1,0 +1,34 @@
+{
+  "sheetName": "compare-vehicle-lookup",
+  "model": "CompareVehicleLookup",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["manufacturer_id", "group_name", "group_order"],
+  "columns": {
+    "Manufacturer": {
+      "property": "manufacturer_id"
+    },
+    "Group": {
+      "model": "CompareVehicleLookup",
+      "property": "group_name"
+    },
+    "Group Order": {
+      "model": "CompareVehicleLookup",
+      "property": "group_order"
+    },
+    "Label and Value": {
+      "model": "CompareVehicleLookup",
+      "property": "label_and_value"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    }
+  }
+}

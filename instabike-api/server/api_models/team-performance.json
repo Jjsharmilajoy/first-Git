@@ -1,0 +1,29 @@
+{
+  "name": "TeamPerformance",
+  "idInjection": false,
+  "properties": {
+    "leadsCreated": {
+      "type": "number"
+    },
+    "monthlyTarget": {
+      "type": "number"
+    },
+    "monthlyUnitsInvoiced": {
+      "type": "number"
+    },
+    "followupDone": {
+      "type": "number"
+    },
+    "user": {
+      "type": "Users"
+    },
+    "followup": {
+      "type": "number"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

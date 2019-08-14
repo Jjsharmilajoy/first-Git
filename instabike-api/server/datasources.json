@@ -1,0 +1,19 @@
+{
+  "postgres": {
+    "host": "${DB_HOST}",
+    "port": "${DB_PORT}",
+    "database": "${DB_NAME}",
+    "password": "${DB_PASSWORD}",
+    "name": "postgres",
+    "user": "${DB_USER_NAME}",
+    "connector": "postgresql",
+    "ssl": "${DB_SSL}",
+    "min": "${DB_CON_POOL_MIN_SIZE}",
+    "max": "${DB_CON_POOL_MAX_SIZE}",
+    "idleTimeoutMillis": "${DB_CON_POOL_IDLE_TIMEOUT}"
+  },
+  "lb-memory": {
+    "name": "lb-memory",
+    "connector": "memory"
+  }
+}

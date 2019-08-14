@@ -1,0 +1,62 @@
+{
+  "name": "VehicleWithPrice",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "slud" : {
+      "type" : "string"
+    },
+    "description" : {
+      "type" : "string"
+    },
+    "type" : {
+      "type" : "string"
+    },
+    "is_active" : {
+      "type" : "boolean"
+    },
+    "threesixty_degree_view" : {
+      "type" : "string"
+    },
+    "displacement" : {
+      "type" : "string"
+    },
+    "max_power" : {
+      "type" : "string"
+    },
+    "overall_weight" : {
+      "type" : "string"
+    },
+    "fuel_efficiency_overall" : {
+      "type" : "string"
+    },
+    "image_url" : {
+      "type" : "string"
+    },
+    "manufacturer_id" : {
+      "type" : "string"
+    },
+    "prices" : {
+      "type" : "[VehiclePrice]"
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

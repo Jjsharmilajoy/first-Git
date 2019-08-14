@@ -1,0 +1,83 @@
+{
+  "name": "GeoLocation",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "postgresql": {
+      "table": "geo_locations"
+    }
+  },
+  "properties": {
+    "ip_from" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "bigint"
+     }
+    },
+    "ip_to" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "bigint"
+     }
+    },
+    "country_code" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "country_name" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "region_name" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "city_name" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "latitude" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "float"
+     }
+    },
+    "longitude" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "float"
+     }
+    },
+    "zip_code" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

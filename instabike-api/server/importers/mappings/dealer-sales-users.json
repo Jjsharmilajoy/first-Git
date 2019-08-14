@@ -1,0 +1,66 @@
+{
+  "sheetName": "dealer-sales-users",
+  "model": "Users",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["mobile_no"],
+  "columns": {
+    "Dealer Code": {
+      "property": "user_type_id"
+    },
+    "First Name": {
+      "property": "first_name"
+    },
+    "Last Name": {
+      "property": "last_name"
+    },
+    "Mobile No": {
+      "property": "mobile_no"
+    },
+    "Email": {
+      "property": "email"
+    },
+    "Lead Mobile No": {
+      "property": "manager_id"
+    },
+    "Password": {
+      "model": "Users",
+      "property": "password"
+    },
+    "User Type Name": {
+      "property": "user_type_name",
+      "defaultValue": "Dealer"
+    },
+    "Country Name": {
+      "property": "country_id"
+    }
+  },
+  "relations": {
+    "user_type_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "dealer_code",
+          "objectProperty": "user_type_id"
+        }
+      ]
+    },
+    "manager_id": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "mobile_no",
+          "objectProperty": "manager_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

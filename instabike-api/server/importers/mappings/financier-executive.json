@@ -1,0 +1,86 @@
+{
+  "sheetName": "financier-executives",
+  "model": "Users",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["mobile_no", "user_type_name", "user_type_id"],
+  "columns": {
+    "Financier Slug": {
+      "property": "user_type_id"
+    },
+    "First name": {
+      "model": "Users",
+      "property": "first_name"
+    },
+    "Last name": {
+      "model": "Users",
+      "property": "last_name"
+    },
+    "Email": {
+      "model": "Users",
+      "property": "email"
+    },
+    "Mobile no": {
+      "model": "Users",
+      "property": "mobile_no"
+    },
+    "User Type Name": {
+      "model": "Users",
+      "property": "user_type_name"
+    },
+    "Password": {
+      "model": "Users",
+      "property": "password"
+    },
+    "User Type Name": {
+      "property": "user_type_name",
+      "defaultValue": "Financier"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "Country Name": {
+      "property": "country_id"
+    },
+    "Mananger": {
+      "property": "manager_id"
+    }
+  },
+  "relations": {
+    "user_type_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "user_type_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    },
+    "manager_id": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "email",
+          "objectProperty": "manager_id"
+        }
+      ]
+    }
+  }
+}

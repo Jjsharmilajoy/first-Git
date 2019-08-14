@@ -1,0 +1,191 @@
+{
+  "name": "Vehicle",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "vehicles"
+     }
+   },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "slug" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "description" : {
+      "type" : "string",
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "type" : {
+      "type" : "number"
+    },
+    "is_active" : {
+      "type" : "boolean",
+      "default": true
+    },
+    "threesixty_degree_view" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "displacement" : {
+      "type": "number",
+      "postgresql": {
+        "dataType": "NUMERIC"
+      }
+    },
+    "bhp" : {
+      "type": "number",
+      "postgresql": {
+        "dataType": "NUMERIC(10,2)"
+      }
+    },
+    "rpm" : {
+      "type": "number",
+      "postgresql": {
+        "dataType": "NUMERIC"
+      }
+    },
+    "overall_weight" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "fuel_efficiency_overall" : {
+      "type": "number",
+      "postgresql": {
+        "dataType": "NUMERIC"
+      }
+   },
+   "image_url": {
+      "type" : "string",
+      "required" : false,
+      "postgresql": {
+       "dataType": "character varying"
+      }
+   },
+   "brochure_url": {
+      "type" : "string",
+      "required" : false,
+      "postgresql": {
+       "dataType": "character varying"
+      }
+   }
+  },
+  "validations": [],
+  "relations": {
+    "manufacturer" : {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "variants" : {
+      "type": "hasMany",
+      "model": "Variant",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "features" : {
+      "type": "hasMany",
+      "model": "VehicleFeature",
+      "foreignKey": "vehicle_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "prices" : {
+      "type": "hasMany",
+      "model": "VehiclePrice",
+      "foreignKey": "vehicle_id"
+    },
+    "dealer_vehicles": {
+      "type": "hasMany",
+      "model": "DealerVehicle",
+      "foreignKey": "vehicle_id"
+    },
+    "dealerInventory" : {
+      "type": "hasMany",
+      "model": "DealerInventory",
+      "foreignKey": "vehicle_id"
+    },
+    "similarVehicles" : {
+      "type": "hasMany",
+      "model": "SimilarVehicle",
+      "foreignKey": "vehicle_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["threeSixtyDegree", "__get__feature", "__get__variants", "findById",
+      "getVehiclePrice", "getVehicleDetail", "getVehicleInsurance", "updateVehicleInsurance","updatePrefered"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_SALES",
+      "permission": "ALLOW",
+      "property": ["threeSixtyDegree", "__get__feature", "__get__variants", "findById", "getVehicleDetail"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property" : ["threeSixtyDegree", "__get__feature", "__get__variants", "findById",
+      "getVehiclePrice", "getVehicleDetail"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["similarVehicles", "getVehicleDetail", "searchVehicle"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

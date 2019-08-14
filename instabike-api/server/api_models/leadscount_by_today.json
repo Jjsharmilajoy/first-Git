@@ -1,0 +1,17 @@
+{
+  "name": "LeadsCountByToday",
+  "base": "PersistedModel",
+  "properties": {
+    "inShowroom": {
+      "type" : "number"
+    },
+    "outOfShowroom": {
+      "type" : "number"
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

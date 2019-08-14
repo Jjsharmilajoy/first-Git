@@ -1,0 +1,112 @@
+{
+  "name": "FinancierTarget",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "financier_targets"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+      "type" : "string",
+      "required" : true,
+      "postgresql": {
+       "dataType": "character varying"
+     }
+    },
+    "from" : {
+      "type" : "date",
+      "required" : true
+    },
+    "to" : {
+      "type" : "date",
+      "required" : true
+    },
+    "target_value" : {
+      "type" : "number",
+      "required" : true
+    },
+    "achieved_value" : {
+      "type" : "number",
+      "default": 0,
+      "required" : true
+    },
+    "incentive_eligibility" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "incentive_earned" : {
+      "type" : "number",
+      "default": 0
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "indexes": {
+    "financier_team_target_key": {
+      "keys": {"financier_id": 1, "financier_team_id": 1, "from": 1, "to": 1},
+      "options": {"unique": false}
+    },
+    "financier_team_member_target_key": {
+      "keys": {"financier_id": 1, "financier_team_id": 1, "user_id": 1, "from": 1, "to": 1},
+      "options": {"unique": false}
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user" : {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "user_id"
+    },
+    "financier" : {
+      "type": "belongsTo",
+      "model": "Financier",
+      "foreignKey": "financier_id"
+    },
+    "financier_team" : {
+      "type": "belongsTo",
+      "model": "FinancierTeam",
+      "foreignKey": "financier_team_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_CITY_HEAD",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate", "getTargetCompletion", "getSalesPerformance"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "FINANCIER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate", "getTargetCompletion", "getSalesPerformance"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["patchOrCreate"]
+    }
+  },
+  "methods": []
+}

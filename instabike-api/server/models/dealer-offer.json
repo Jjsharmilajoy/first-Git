@@ -1,0 +1,89 @@
+{
+  "name": "DealerOffer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_offers"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": "true"
+    },
+    "offer_value": {
+      "type" : "number",
+      "default" : 0
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id"
+    },
+    "lead": {
+      "type": "belongsTo",
+      "model": "Lead",
+      "foreignKey": "lead_id"
+    },
+    "leadDetail": {
+      "type": "belongsTo",
+      "model": "LeadDetail",
+      "foreignKey": "lead_detail_id"
+    },
+    "dealerUser": {
+      "type": "belongsTo",
+      "model": "Users",
+      "foreignKey": "user_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_SALES",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate"]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_TEAM_HEAD",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

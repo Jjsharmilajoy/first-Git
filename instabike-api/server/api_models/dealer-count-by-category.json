@@ -1,0 +1,19 @@
+{
+  "name": "DealerCountByCategory",
+  "properties": {
+    "zoneIds" : {
+      "type": ["string"]
+    },
+    "stateIds" : {
+      "type": ["string"]
+    },
+    "cityIds" : {
+      "type": ["string"]
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

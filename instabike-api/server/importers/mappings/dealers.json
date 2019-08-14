@@ -1,0 +1,202 @@
+{
+  "sheetName": "dealers",
+  "model": "Dealer",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["manufacturer_id", "zone_id", "state_id", "city_id", "name"],
+  "columns": {
+    "Manufacturer Name": {
+      "property": "manufacturer_id"
+    },
+    "Dealer Id in DMS": {
+      "model": "Dealer",
+      "property": "external_id"
+    },
+    "Dealer Name": {
+      "model": "Dealer",
+      "property": "name"
+    },
+    "Dealer Code": {
+      "model": "Dealer",
+      "property": "dealer_code"
+    },
+    "Mobile no": {
+      "model": "Dealer",
+      "property": "mobile_no"
+    },
+    "Dealer Address line-1": {
+      "model": "Dealer",
+      "property": "address_line_1"
+    },
+    "Dealer Address line-2": {
+      "model": "Dealer",
+      "property": "address_line_2"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "Pincode": {
+      "model": "Dealer",
+      "property": "pincode"
+    },
+    "Land line no": {
+      "model": "Dealer",
+      "property": "landline_no"
+    },
+    "GST No": {
+      "model": "Dealer",
+      "property": "gst_number"
+    },
+    "PAN": {
+      "model": "Dealer",
+      "property": "gst_number"
+    },
+    "Country": {
+      "property": "country_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "Region": {
+      "property": "region_id"
+    },
+    "Dealer category": {
+      "property": "dealer_category_id"
+    },
+    "Email": {
+      "model": "Dealer",
+      "property": "email"
+    },
+    "Term and Conditions": {
+      "property": "terms_and_conditions"
+    },
+    "Cheque": {
+      "property": "cheque_in_favour_of"
+    },
+    "Account Details": {
+      "property": "account_details"
+    },
+    "monday_friday_start": {
+      "property": "monday_friday_start"
+    },
+    "monday_friday_end": {
+      "property": "monday_friday_end"
+    },
+    "saturday_start": {
+      "property": "saturday_start"
+    },
+    "saturday_end": {
+      "property": "saturday_end"
+    },
+    "sunday_start": {
+      "property": "sunday_start"
+    },
+    "sunday_end": {
+      "property": "sunday_end"
+    },
+    "working_monday_friday_start": {
+      "property": "working_monday_friday_start"
+    },
+    "working_monday_friday_end": {
+      "property": "working_monday_friday_end"
+    },
+    "working_saturday_start": {
+      "property": "working_saturday_start"
+    },
+    "working_saturday_end": {
+      "property": "working_saturday_end"
+    },
+    "working_sunday_start": {
+      "property": "working_sunday_start"
+    },
+    "working_sunday_end": {
+      "property": "working_sunday_end"
+    },
+    "weekly_holiday": {
+      "property": "weekly_holiday"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "region_id": {
+      "model": "Region",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "region_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    },
+    "dealer_category_id": {
+      "model": "DealerCategory",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_category_id"
+        },
+        {
+          "queryProperty": "manufacturer_id",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    }
+  }
+}

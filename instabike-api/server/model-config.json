@@ -1,0 +1,410 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "./api_models"
+    ],
+   "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins",
+      "../node_modules/loopback-setup-remote-methods-mixin"
+    ]
+  },
+  "Users": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "AccessToken": {
+    "dataSource": "postgres",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "Users",
+        "foreignKey": "userId"
+      },
+      "documentToken": {
+        "type": "belongsTo",
+        "model": "AccessToken",
+        "foreignKey": "accesstoken_id"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "Roles": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "UserRole": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "City": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerAccessory": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerCategory": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerFinancier": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerInventory": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerMetric": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "DealerOffer": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerSalesIncentive": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "ManufacturerTarget": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "DealerTarget": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerVehicle": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Dealer": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "ExchangeVehicle": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Document": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FinancierTarget": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Financier": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "InterProductComparisonDetail": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "InterProductComparison": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "Manufacturer": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "ProformaInvoice": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Region": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "State": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "TestRideVehicle": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "VariantColour": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "VehicleFeature": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Variant": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "VehicleGallery": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "VehiclePrice": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "VehicleReview": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Vehicle": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Country" : {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Zone" : {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "GeoLocation": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "Lead": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "LeadDetail": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "LeadActivity": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FollowUp": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Accessory": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "ManufacturerFinancier": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "ManufacturerFinancierOrder": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "DealerUser": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "DealerInventoryDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadsByCategory": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "ProformaInvoiceAccessory": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "ProformaInvoiceOffer": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "LostReason": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "VehicleWithPrice": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "VehicleDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadsCountByStatus": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadsListByStatus": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "ProformaInvoiceDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "VariantDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "ManufacturerTagetByDate": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "DealerCountByCategory": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadWithLeadDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "DealerSalesEffectiveness": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadWithDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadsByFollowup": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadsCountByToday": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "FollowupCountByToday": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "ActiveLeads": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadsLostAnalysis": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "LeadActivityDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "SimilarVehicle": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "TeamPerformance": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "VehicleSummary": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "AutocompleteUsers": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "FinancierTeam": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FinancierTeamMember": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FinancierBranch": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FinancierDealer": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FinancierLead": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FinancierLeadWithDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "NewTeamMember": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "FinancierInterestDetail": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "TestRideWeeklySlot": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "TestRideDailySlot": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "FinancierLeadCountByStatus": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "DateFilter": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "DateAndTeamFilter": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "DateAndMemberFilter": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "ExchangeVehicleLookup": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "FinancierLeadActivityDetail": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "DealershipLeadEffectiveness": {
+    "dataSource": "lb-memory",
+    "public": true
+  },
+  "FinancierIncentive": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "VehicleInsurance": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "ProformaInvoiceOtherCharge": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "RequestAudit": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Error": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "CompareVehicleLookup": {
+    "dataSource": "postgres",
+    "public": false
+  }
+}

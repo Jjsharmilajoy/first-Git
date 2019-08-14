@@ -1,0 +1,29 @@
+{
+  "name": "TestRideDailySlot",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "hidden": ["id"],
+  "options": {
+  },
+  "properties": {
+    "slotFrom" : {
+      "type" : "date"
+    },
+    "slotTo" : {
+      "type" : "date"
+    },
+    "booked_count" : {
+      "type" : "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

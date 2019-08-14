@@ -1,0 +1,107 @@
+{
+  "name": "DealerAccessory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "postgresql": {
+      "table": "dealer_accessories"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dbDefault": "uuid_generate_v4()",
+        "dataType": "uuid"
+      }
+    },
+    "name" : {
+     "type" : "string",
+     "required" : true,
+     "postgresql": {
+       "dataType": "character varying"
+     }
+   },
+    "price" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "sgst_price" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "cgst_price" : {
+      "type" : "number",
+      "default" : 0
+    },
+    "is_mandatory" : {
+      "type" : "boolean",
+      "required" : true,
+      "default" : false
+    },
+    "is_available" : {
+      "type" : "boolean",
+      "default" : true
+    },
+    "image_url" : {
+      "type" : "string",
+      "postgresql": {
+        "dataType": "character varying"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "dealer": {
+      "type": "belongsTo",
+      "model": "Dealer",
+      "foreignKey": "dealer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "manufacturer": {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "accessory": {
+      "type": "belongsTo",
+      "model": "Accessory",
+      "foreignKey": "accessory_id"
+    },
+    "vehicle": {
+     "type": "belongsTo",
+     "model": "Vehicle",
+     "foreignKey": "vehicle_id",
+     "postgresql": {
+       "dataType": "uuid"
+     }
+   }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "DEALER_MANAGER",
+      "permission": "ALLOW",
+      "property" : ["patchOrCreate"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

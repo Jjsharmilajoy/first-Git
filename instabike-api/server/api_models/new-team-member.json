@@ -1,0 +1,25 @@
+{
+  "name": "NewTeamMember",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "properties": {
+    "teamMembers": {
+      "type" : ["Users"]
+    },
+    "dealerIds" : {
+      "type" : ["string"]
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

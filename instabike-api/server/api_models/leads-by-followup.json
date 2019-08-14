@@ -1,0 +1,17 @@
+{
+  "name": "LeadsByFollowup",
+  "idInjection": false,
+  "properties": {
+    "overdue": {
+      "type" : ["LeadWithDetail"]
+    },
+    "pending": {
+      "type" : ["LeadWithDetail"]
+    }
+  },
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  }
+}

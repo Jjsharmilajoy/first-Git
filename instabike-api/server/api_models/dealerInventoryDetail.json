@@ -1,0 +1,47 @@
+{
+  "name": "DealerInventoryDetail",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "image_url" : {
+      "type" : "string"
+    },
+    "stock_available" : {
+      "type" : "string"
+    },
+    "incentive_amount" : {
+      "type" : "string"
+    },
+    "offer" : {
+      "type" : "string"
+    },
+    "test_ride_vehicle" : {
+      "type" : "string"
+    },
+    "slots_per_vechile" : {
+      "type" : "string"
+    },
+    "price" : {
+      "type" : "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+  },
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": []
+    }
+  },
+  "methods": []
+}

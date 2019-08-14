@@ -1,0 +1,74 @@
+{
+  "sheetName": "financier-dealers",
+  "model": "FinancierDealer",
+  "columns": {
+    "From": {
+      "property": "from_date"
+    },
+    "To": {
+      "property": "to_date"
+    },
+    "Financier": {
+      "property": "financier_id"
+    },
+    "Financier Team": {
+      "property": "financier_team_id"
+    },
+    "User": {
+      "property": "user_id"
+    },
+    "Dealer": {
+      "property": "dealer_id"
+    },
+    "City": {
+      "property": "city_id"
+    }
+  },
+  "relations": {
+    "financier_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "financier_id"
+        }
+      ]
+    },
+    "financier_team_id": {
+      "model": "FinancierTeam",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "financier_team_id"
+        }
+      ]
+    },
+    "user_id": {
+      "model": "Users",
+      "queryDependencies": [
+        {
+          "queryProperty": "email",
+          "objectProperty": "user_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    }
+  }
+}

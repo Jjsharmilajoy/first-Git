@@ -1,0 +1,72 @@
+{
+  "name": "Zone",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "zones"
+    }
+  },
+  "properties": {
+    "id": {
+      "id": true,
+      "type": "string",
+      "postgresql": {
+        "dataType": "uuid",
+        "dbDefault": "uuid_generate_v4()"
+      }
+    },
+    "name": {
+      "type" : "string",
+      "required" : true
+    },
+    "created_at": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updated_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "manufacturer" : {
+      "type": "belongsTo",
+      "model": "Manufacturer",
+      "foreignKey": "manufacturer_id",
+      "postgresql": {
+        "dataType": "uuid"
+      }
+    },
+    "country" : {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": "country_id"
+    },
+    "states": {
+      "type": "hasMany",
+      "model": "State",
+      "foreignKey": "zone_id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": ["MANUFACTURER_COUNTRY_HEAD"],
+      "permission": "ALLOW",
+      "property" : "__get__states"
+    }, {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property" : ["getCities", "getStatesByZone", "find"]
+    }
+  ],
+  "mixins": {
+    "SetupRemoteMethods": {
+      "disableAllExcept": ["getCities", "getStatesByZone", "find"]
+    }
+  },
+  "methods": []
+}

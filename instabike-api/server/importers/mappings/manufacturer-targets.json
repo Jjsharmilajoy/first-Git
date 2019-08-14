@@ -1,0 +1,118 @@
+{
+  "sheetName": "manufacturer-targets",
+  "model": "ManufacturerTarget",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["target_name", "dealer_id", "manufacturer_id", "vehicle_type"],
+  "columns": {
+    "Target Name": {
+      "property": "target_name"
+    },
+    "From Date": {
+      "property": "target_from_date"
+    },
+    "To Date": {
+      "property": "target_to_date"
+    },
+    "Type": {
+      "property": "vehicle_type"
+    },
+    "Financial year": {
+      "property": "financial_year"
+    },
+    "Month count": {
+      "property": "month_target_count"
+    },
+    "Total count": {
+      "property": "total_count"
+    },
+    "Target": {
+      "property": "target"
+    },
+    "Dealer category": {
+      "property": "dealer_category_id"
+    },
+    "Dealer Code": {
+      "property": "dealer_id"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "Country": {
+      "property": "country_id"
+    },
+    "Manufacturer": {
+      "property": "manufacturer_id"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "dealer_code",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "dealer_category_id": {
+      "model": "DealerCategory",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_category_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

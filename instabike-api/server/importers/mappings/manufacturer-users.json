@@ -1,0 +1,58 @@
+{
+  "sheetName": "manufacturer-users",
+  "model": "Users",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["mobile_no", "user_type_name", "user_type_id"],
+  "columns": {
+    "Manufacturer Slug": {
+      "property": "user_type_id"
+    },
+    "First name": {
+      "model": "Users",
+      "property": "first_name"
+    },
+    "Last name": {
+      "model": "Users",
+      "property": "last_name"
+    },
+    "Email-id": {
+      "model": "Users",
+      "property": "email"
+    },
+    "Mobile no": {
+      "model": "Users",
+      "property": "mobile_no"
+    },
+    "Password": {
+      "model": "Users",
+      "property": "password"
+    },
+    "User Type Name": {
+      "property": "user_type_name",
+      "defaultValue": "Manufacturer"
+    },
+    "Country Name": {
+      "property": "country_id"
+    }
+  },
+  "relations": {
+    "user_type_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "user_type_id"
+        }
+      ]
+    },
+    "country_id": {
+      "model": "Country",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "country_id"
+        }
+      ]
+    }
+  }
+}

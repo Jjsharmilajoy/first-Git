@@ -1,0 +1,106 @@
+{
+  "sheetName": "dealer-financiers",
+  "model": "DealerFinancier",
+  "Statergy": "findorcreate",
+  "QueryParams": ["manufacturer_id", "dealer_id", "financier_id"],
+  "columns": {
+    "Manufacturer": {
+      "property": "manufacturer_id"
+    },
+    "Dealer": {
+      "property": "dealer_id"
+    },
+    "Financier": {
+      "property": "financier_id"
+    },
+    "City": {
+      "property": "city_id"
+    },
+    "State": {
+      "property": "state_id"
+    },
+    "Region": {
+      "property": "region_id"
+    },
+    "Zone": {
+      "property": "zone_id"
+    },
+    "is_mandatory": {
+      "model": "DealerFinancier",
+      "property": "is_mandatory"
+    },
+    "Order": {
+      "model": "DealerFinancier",
+      "property": "order"
+    },
+    "Is Manufacturer Financier": {
+      "model": "DealerFinancier",
+      "property": "is_manufacturer_financier"
+    }
+  },
+  "relations": {
+    "manufacturer_id": {
+      "model": "Manufacturer",
+      "queryDependencies": [
+        {
+          "queryProperty": "slug",
+          "objectProperty": "manufacturer_id"
+        }
+      ]
+    },
+    "dealer_id": {
+      "model": "Dealer",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "dealer_id"
+        }
+      ]
+    },
+    "financier_id": {
+      "model": "Financier",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "financier_id"
+        }
+      ]
+    },
+    "city_id": {
+      "model": "City",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "city_id"
+        }
+      ]
+    },
+    "state_id": {
+      "model": "State",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "state_id"
+        }
+      ]
+    },
+    "region_id": {
+      "model": "Region",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "region_id"
+        }
+      ]
+    },
+    "zone_id": {
+      "model": "Zone",
+      "queryDependencies": [
+        {
+          "queryProperty": "name",
+          "objectProperty": "zone_id"
+        }
+      ]
+    }
+  }
+}

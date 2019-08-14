@@ -1,0 +1,42 @@
+{
+  "sheetName": "financiers",
+  "model": "Financier",
+  "Statergy": "upsertwithwhere",
+  "QueryParams": ["name"],
+  "columns": {
+    "Name": {
+      "model": "Financier",
+      "property": "name"
+    },
+    "Slug": {
+      "model": "Financier",
+      "property": "slug"
+    },
+    "Logo": {
+      "model": "Financier",
+      "property": "logo_url"
+    },
+    "Image": {
+      "model": "Financier",
+      "property": "image_url"
+    },
+    "Location": {
+      "model": "Financier",
+      "property": "location"
+    },
+    "Address": {
+      "model": "Financier",
+      "property": "office_address"
+    },
+    "Email": {
+      "model": "Financier",
+      "property": "email_id"
+    },
+    "Mobile": {
+      "model": "Financier",
+      "property": "contact_number"
+    }
+  },
+  "relations": {
+  }
+}
