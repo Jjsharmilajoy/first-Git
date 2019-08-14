@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_icon_next.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_icon_next.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_controls_repeat_one.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_controls_repeat_one.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_icon_fastforward.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_icon_fastforward.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_controls_repeat_off.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_controls_repeat_off.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_controls_repeat_all.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_controls_repeat_all.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_icon_previous.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_icon_previous.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_icon_rewind.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_icon_rewind.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_edit_mode_logo.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_edit_mode_logo.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_icon_play.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_icon_play.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_controls_fullscreen_enter.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_controls_fullscreen_enter.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_icon_pause.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_icon_pause.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_icon_stop.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_icon_stop.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_controls_shuffle.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_controls_shuffle.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/exo_controls_fullscreen_exit.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/res/drawable-anydpi-v21/exo_controls_fullscreen_exit.xml"
+    }
+]

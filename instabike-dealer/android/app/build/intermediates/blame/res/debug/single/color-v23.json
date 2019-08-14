@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v23/abc_tint_default.xml"
+    }
+]

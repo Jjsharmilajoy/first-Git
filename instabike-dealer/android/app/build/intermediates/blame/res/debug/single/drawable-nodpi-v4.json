@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/rectangle_marker_top_left.9.png",
+        "source": "/opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/bundles/debug/res/drawable-nodpi-v4/rectangle_marker_top_left.9.png"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/rectangle_marker_top.9.png",
+        "source": "/opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/bundles/debug/res/drawable-nodpi-v4/rectangle_marker_top.9.png"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/rectangle_marker_left.9.png",
+        "source": "/opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/bundles/debug/res/drawable-nodpi-v4/rectangle_marker_left.9.png"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/rectangle_marker_right.9.png",
+        "source": "/opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/bundles/debug/res/drawable-nodpi-v4/rectangle_marker_right.9.png"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/oval_marker.png",
+        "source": "/opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/bundles/debug/res/drawable-nodpi-v4/oval_marker.png"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/rectangle_marker_top_right.9.png",
+        "source": "/opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/bundles/debug/res/drawable-nodpi-v4/rectangle_marker_top_right.9.png"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/rectangle_marker.9.png",
+        "source": "/opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/bundles/debug/res/drawable-nodpi-v4/rectangle_marker.9.png"
+    }
+]

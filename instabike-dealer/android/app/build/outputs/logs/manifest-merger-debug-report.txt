@@ -1,0 +1,326 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+MERGED from [:react-native-video] /opt/Projects/instabike-dealer/node_modules/react-native-video/android-exoplayer/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-sound] /opt/Projects/instabike-dealer/node_modules/react-native-sound/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-13:12
+MERGED from [:react-native-print] /opt/Projects/instabike-dealer/node_modules/react-native-print/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-47:12
+MERGED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-23:12
+MERGED from [:react-native-vector-icons] /opt/Projects/instabike-dealer/node_modules/react-native-vector-icons/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-linear-gradient] /opt/Projects/instabike-dealer/node_modules/react-native-linear-gradient/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-charts-wrapper] /opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.55.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.exoplayer:exoplayer:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-2.9.3.aar/cc078c515c4fe3192f95f3208a366a0a/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a72e2492573c6a5422314b00a01a09f7/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/894e5328abdf045da176f249125822a8/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0138138a69a61fcfd70c9b551bca4bbe/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/de8fa3e61ff499ff3c282822cfe8f9f0/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-fragment:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/9b4538a1b10aff6f4c877367e2c93b3d/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/64b997d7738fb7695e281f4a43e9471c/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ec2171f4447bcfbcdc4e8d5800bfcb6c/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.exoplayer:extension-okhttp:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.9.3.aar/49fb6e90a232561095c72f2747b5f5ec/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.9.3.aar/9a94446caeeee67be24483a3e46f89f3/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.9.3.aar/5de9fec4ddf72e39760dd924a538e54d/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.9.3.aar/fe9c83356e9d7b100e8b4ab017c38fb3/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.3.aar/8d978c15c2b300ff4045669e9e80d781/AndroidManifest.xml:17:1-26:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/ca83de5fe53b78ffa55bbcd23cd60294/AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:17:1-30:12
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/4d06383469ff2d08b5fff08009c55ea3/AndroidManifest.xml:10:1-18:12
+MERGED from [com.facebook.fresco:fresco:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/2a3910cc1b985f02a1ca7bb5174a3a95/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/76d54e82a7d2557d10b99725fec098dd/AndroidManifest.xml:1:1-4:12
+MERGED from [org.webkit:android-jsc:r174650] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/ef9386e417b91ba5b001ce992aba2524/AndroidManifest.xml:1:1-3:12
+MERGED from [com.facebook.fresco:drawee:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/2506644d3fbcc5b3093014d46e953b90/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/e40929580908bebbf695e4ca689957f8/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/de1e141b231831973175fdc43df0aac1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/788b4a57b938874450683a933dd1d146/AndroidManifest.xml:2:1-9:12
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+	package
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:3:5-27
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:2:5-51
+	android:versionCode
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-67
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:5-67
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:6:5-81
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:5-81
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:5-81
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:7:5-77
+MERGED from [com.facebook.react:react-native:0.55.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.55.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:7:22-75
+uses-permission#android.permission.CAMERA
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:9:22-62
+uses-feature#android.hardware.camera
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:10:5-60
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:10:19-57
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:12:5-94
+	tools:node
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:12:73-92
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:12:22-72
+uses-permission#android.permission.CALL_PHONE
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:14:5-69
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:14:22-66
+application
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:16:5-35:19
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:35:5-45:19
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:35:5-45:19
+MERGED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [com.facebook.react:react-native:0.55.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.55.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a72e2492573c6a5422314b00a01a09f7/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a72e2492573c6a5422314b00a01a09f7/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/894e5328abdf045da176f249125822a8/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/894e5328abdf045da176f249125822a8/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0138138a69a61fcfd70c9b551bca4bbe/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0138138a69a61fcfd70c9b551bca4bbe/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/de8fa3e61ff499ff3c282822cfe8f9f0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/de8fa3e61ff499ff3c282822cfe8f9f0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/9b4538a1b10aff6f4c877367e2c93b3d/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/9b4538a1b10aff6f4c877367e2c93b3d/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/64b997d7738fb7695e281f4a43e9471c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/64b997d7738fb7695e281f4a43e9471c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ec2171f4447bcfbcdc4e8d5800bfcb6c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ec2171f4447bcfbcdc4e8d5800bfcb6c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:24:5-28:19
+MERGED from [com.facebook.soloader:soloader:0.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/76d54e82a7d2557d10b99725fec098dd/AndroidManifest.xml:3:3-17
+MERGED from [com.facebook.soloader:soloader:0.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/76d54e82a7d2557d10b99725fec098dd/AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/ef9386e417b91ba5b001ce992aba2524/AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/ef9386e417b91ba5b001ce992aba2524/AndroidManifest.xml:2:3-17
+	android:label
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:18:7-39
+	android:icon
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:19:7-41
+	android:allowBackup
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:20:7-34
+	android:theme
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:21:7-38
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:17:7-38
+activity#in.instabike.MainActivity
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:22:7-33:18
+	android:screenOrientation
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:26:9-52
+	android:label
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:24:9-41
+	android:windowSoftInputMode
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:27:9-48
+	android:configChanges
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:25:9-79
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:23:9-37
+intent-filter#android.intent.action.DOWNLOAD_COMPLETE+android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:28:9-32:25
+action#android.intent.action.MAIN
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:29:13-65
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:29:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:30:13-73
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:30:23-70
+action#android.intent.action.DOWNLOAD_COMPLETE
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:31:6-70
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:31:14-68
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:34:7-84
+	android:name
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:34:17-81
+uses-sdk
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-video] /opt/Projects/instabike-dealer/node_modules/react-native-video/android-exoplayer/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] /opt/Projects/instabike-dealer/node_modules/react-native-video/android-exoplayer/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-sound] /opt/Projects/instabike-dealer/node_modules/react-native-sound/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-11:41
+MERGED from [:react-native-sound] /opt/Projects/instabike-dealer/node_modules/react-native-sound/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:9:5-11:41
+MERGED from [:react-native-print] /opt/Projects/instabike-dealer/node_modules/react-native-print/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-print] /opt/Projects/instabike-dealer/node_modules/react-native-print/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /opt/Projects/instabike-dealer/node_modules/react-native-vector-icons/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /opt/Projects/instabike-dealer/node_modules/react-native-vector-icons/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /opt/Projects/instabike-dealer/node_modules/react-native-linear-gradient/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /opt/Projects/instabike-dealer/node_modules/react-native-linear-gradient/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-charts-wrapper] /opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-charts-wrapper] /opt/Projects/instabike-dealer/node_modules/react-native-charts-wrapper/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.55.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.55.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:21:5-23:78
+MERGED from [com.google.android.exoplayer:exoplayer:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-2.9.3.aar/cc078c515c4fe3192f95f3208a366a0a/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-2.9.3.aar/cc078c515c4fe3192f95f3208a366a0a/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:support-v4:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a72e2492573c6a5422314b00a01a09f7/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a72e2492573c6a5422314b00a01a09f7/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/894e5328abdf045da176f249125822a8/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/894e5328abdf045da176f249125822a8/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0138138a69a61fcfd70c9b551bca4bbe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0138138a69a61fcfd70c9b551bca4bbe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/de8fa3e61ff499ff3c282822cfe8f9f0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/de8fa3e61ff499ff3c282822cfe8f9f0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/9b4538a1b10aff6f4c877367e2c93b3d/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/9b4538a1b10aff6f4c877367e2c93b3d/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/64b997d7738fb7695e281f4a43e9471c/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/64b997d7738fb7695e281f4a43e9471c/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ec2171f4447bcfbcdc4e8d5800bfcb6c/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ec2171f4447bcfbcdc4e8d5800bfcb6c/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.android.exoplayer:extension-okhttp:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.9.3.aar/49fb6e90a232561095c72f2747b5f5ec/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:extension-okhttp:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.9.3.aar/49fb6e90a232561095c72f2747b5f5ec/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.9.3.aar/9a94446caeeee67be24483a3e46f89f3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-dash-2.9.3.aar/9a94446caeeee67be24483a3e46f89f3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.9.3.aar/5de9fec4ddf72e39760dd924a538e54d/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-hls-2.9.3.aar/5de9fec4ddf72e39760dd924a538e54d/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.9.3.aar/fe9c83356e9d7b100e8b4ab017c38fb3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-smoothstreaming-2.9.3.aar/fe9c83356e9d7b100e8b4ab017c38fb3/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-ui-2.9.3.aar/2ce742cdbf8f330d0ef49db33da29459/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.3.aar/8d978c15c2b300ff4045669e9e80d781/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.3.aar/8d978c15c2b300ff4045669e9e80d781/AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/ca83de5fe53b78ffa55bbcd23cd60294/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/ca83de5fe53b78ffa55bbcd23cd60294/AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/4d06383469ff2d08b5fff08009c55ea3/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/4d06383469ff2d08b5fff08009c55ea3/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/2a3910cc1b985f02a1ca7bb5174a3a95/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/2a3910cc1b985f02a1ca7bb5174a3a95/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/76d54e82a7d2557d10b99725fec098dd/AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.soloader:soloader:0.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/76d54e82a7d2557d10b99725fec098dd/AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.fresco:drawee:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/2506644d3fbcc5b3093014d46e953b90/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/2506644d3fbcc5b3093014d46e953b90/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/e40929580908bebbf695e4ca689957f8/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/e40929580908bebbf695e4ca689957f8/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/de1e141b231831973175fdc43df0aac1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/de1e141b231831973175fdc43df0aac1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/788b4a57b938874450683a933dd1d146/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/788b4a57b938874450683a933dd1d146/AndroidManifest.xml:5:5-7:41
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+		ADDED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+		INJECTED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml
+uses-permission#com.android.vending.CHECK_LICENSE
+ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-73
+	android:name
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:22-70
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:5-68
+	android:name
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:21:22-65
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.3.aar/8d978c15c2b300ff4045669e9e80d781/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.9.3] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/exoplayer-core-2.9.3.aar/8d978c15c2b300ff4045669e9e80d781/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:5-76
+	android:name
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:22-73
+provider#android.support.v4.content.FileProvider
+ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:36:9-44:20
+	android:grantUriPermissions
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:40:13-47
+	android:authorities
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:38:13-60
+	android:exported
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:39:13-37
+	android:name
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:37:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:41:13-43:58
+	android:resource
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:43:17-55
+	android:name
+		ADDED from [:rn-fetch-blob] /opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:42:17-67
+provider#com.imagepicker.FileProvider
+ADDED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:9-20:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:13-60
+	android:exported
+		ADDED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [:react-native-image-picker] /opt/Projects/instabike-dealer/node_modules/react-native-image-picker/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:13-56
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a72e2492573c6a5422314b00a01a09f7/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/a72e2492573c6a5422314b00a01a09f7/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/894e5328abdf045da176f249125822a8/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/894e5328abdf045da176f249125822a8/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0138138a69a61fcfd70c9b551bca4bbe/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/0138138a69a61fcfd70c9b551bca4bbe/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/de8fa3e61ff499ff3c282822cfe8f9f0/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/de8fa3e61ff499ff3c282822cfe8f9f0/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/9b4538a1b10aff6f4c877367e2c93b3d/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/9b4538a1b10aff6f4c877367e2c93b3d/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/64b997d7738fb7695e281f4a43e9471c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/64b997d7738fb7695e281f4a43e9471c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ec2171f4447bcfbcdc4e8d5800bfcb6c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/ec2171f4447bcfbcdc4e8d5800bfcb6c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /home/ubuntu/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/ef1c053d0d3f4ddb41af78429cec10c4/AndroidManifest.xml:26:13-58
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /opt/Projects/instabike-dealer/android/app/src/main/AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

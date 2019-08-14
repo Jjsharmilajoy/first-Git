@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/xml/provider_paths.xml",
+        "source": "/opt/Projects/instabike-dealer/node_modules/rn-fetch-blob/android/build/intermediates/bundles/debug/res/xml/provider_paths.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/react-native-0.55.3.aar/81ec4fe68a980d94d0ac3bc4f8f8587f/res/xml/preferences.xml"
+    }
+]

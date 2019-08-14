@@ -1,0 +1,19 @@
+export const FOLLOW_UP_TODAY_LOAD = 'followUpLeads/FOLLOW_UP_TODAY_LOAD';
+export const FOLLOW_UP_TODAY_SUCCESS = 'followUpLeads/FOLLOW_UP_TODAY_SUCCESS';
+export const FOLLOW_UP_TODAY_FAILURE = 'followUpLeads/FOLLOW_UP_TODAY_FAILURE';
+
+export const FOLLOW_UP_DONE_LOAD = 'followUpLeads/FOLLOW_UP_DONE_LOAD';
+export const FOLLOW_UP_DONE_SUCCESS = 'followUpLeads/FOLLOW_UP_DONE_SUCCESS';
+export const FOLLOW_UP_DONE_FAILURE = 'followUpLeads/FOLLOW_UP_DONE_FAILURE';
+
+export const FOLLOW_UP_ASSIGNEE_LOAD = 'followUpLeads/FOLLOW_UP_ASSIGNEE_LOAD';
+export const FOLLOW_UP_ASSIGNEE_SUCCESS = 'followUpLeads/FOLLOW_UP_ASSIGNEE_SUCCESS';
+export const FOLLOW_UP_ASSIGNEE_FAILURE = 'followUpLeads/FOLLOW_UP_ASSIGNEE_FAILURE';
+
+export const UPDATE_LEAD_LOAD = 'followUpLeads/UPDATE_LEAD_LOAD';
+export const UPDATE_LEAD_SUCCESS = 'followUpLeads/UPDATE_LEAD_SUCCESS';
+export const UPDATE_LEAD_FAIL = 'followUpLeads/UPDATE_LEAD_FAIL';
+
+export const FOLLOW_COUNT_LOAD = 'followUpLeads/FOLLOW_COUNT_LOAD';
+export const FOLLOW_COUNT_SUCCESS = 'followUpLeads/FOLLOW_COUNT_SUCCESS';
+export const FOLLOW_COUNT_FAILURE = 'followUpLeads/FOLLOW_COUNT_FAILURE';

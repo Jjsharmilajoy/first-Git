@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/fb5e8cd81892bf70d3f7e35d248af304/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

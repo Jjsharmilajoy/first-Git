@@ -1,0 +1,18 @@
+export const GETLEADS_LOAD = 'leads/GETLEADS_LOAD';
+export const GETLEADS_SUCCESS = 'leads/GETLEADS_SUCCESS';
+export const GETLEADS_FAIL = 'leads/GETLEADS_FAIL';
+
+export const GETEXECUTIVES_LOAD = 'leads/GETEXECUTIVES_LOAD';
+export const GETEXECUTIVES_SUCCESS = 'leads/GETEXECUTIVES_SUCCESS';
+export const GETEXECUTIVES_FAIL = 'leads/GETEXECUTIVES_FAIL';
+
+export const GETCOUNT_LOAD = 'leads/GETCOUNT_LOAD';
+export const GETCOUNT_SUCCESS = 'leads/GETCOUNT_SUCCESS';
+export const GETCOUNT_FAIL = 'leads/GETCOUNT_FAIL';
+
+export const FILTERLEAD_LOAD = 'leads/FILTERLEAD_LOAD';
+export const FILTERLEAD_SUCCESS = 'leads/FILTERLEAD_SUCCESS';
+export const FILTERLEAD_FAIL = 'leads/FILTERLEAD_FAIL';
+
+export const CLEAR_LEAD = 'leads/CLEAR_LEAD';
+export const CLEAR_SEARCH_TEXT = 'leads/CLEAR_SEARCH_TEXT';

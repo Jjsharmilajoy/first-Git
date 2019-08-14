@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/opt/Projects/instabike-dealer/android/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/ubuntu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/44a244b04cdd6a63de341a7c62d0c852/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]
