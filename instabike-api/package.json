@@ -72,7 +72,7 @@
     "google-geocoder": "^0.2.1",
     "image-downloader": "^3.3.0",
     "json2csv": "^4.2.1",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.19",
     "loopback": "^3.0.0",
     "loopback-boot": "^2.4.0",
     "loopback-connector-postgresql": "^2.8.0",
