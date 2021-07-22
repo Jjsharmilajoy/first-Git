@@ -98,7 +98,7 @@
     "webpack": "^4.1.0",
     "winston": "^2.4.1",
     "wkhtmltopdf": "^0.3.4",
-    "xlsx": "^0.12.6"
+    "xlsx": "^0.17.0"
   },
   "optionalDependencies": {
     "loopback-component-explorer": "^2.1.0"
