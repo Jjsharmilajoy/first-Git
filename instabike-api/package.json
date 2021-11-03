@@ -94,7 +94,7 @@
     "strong-error-handler": "^1.1.1",
     "supertest": "^3.0.0",
     "underscore-node": "^0.1.2",
-    "validator": "^9.4.1",
+    "validator": "^13.7.0",
     "webpack": "^4.1.0",
     "winston": "^2.4.1",
     "wkhtmltopdf": "^0.3.4",
