@@ -75,7 +75,7 @@
     "lodash": "^4.17.5",
     "loopback": "^3.0.0",
     "loopback-boot": "^2.4.0",
-    "loopback-connector-postgresql": "^2.8.0",
+    "loopback-connector-postgresql": "^5.5.1",
     "loopback-console": "^1.1.0",
     "loopback-context": "^3.3.0",
     "loopback-setup-remote-methods-mixin": "https://github.com/ramanaveli2i/loopback-setup-remote-methods-mixin.git",
